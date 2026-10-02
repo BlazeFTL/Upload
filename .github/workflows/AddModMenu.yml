@@ -1,0 +1,221 @@
+name: Add Mod Menu Patch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write patch files
+        run: |
+          mkdir -p FTL-Patches-dev/patches/src/main/kotlin/app/ftl/patches/Fenix
+          mkdir -p FTL-Patches-dev/extensions/FenixModMenu/src/main/java/app/ftl/extension/fenixmodmenu
+          cat > FTL-Patches-dev/patches/src/main/kotlin/app/ftl/patches/Fenix/ModMenuPatch.kt <<'KT_EOF'
+          package app.ftl.patches.fenix
+
+          import app.morphe.patcher.patch.bytecodePatch
+          import app.morphe.patcher.fingerprint.Fingerprint
+          import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
+          import app.morphe.patcher.extensions.InstructionExtensions.instructionsOrNull
+          import com.android.tools.smali.dexlib2.Opcode
+          import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
+          import com.android.tools.smali.dexlib2.iface.reference.MethodReference
+
+          // Compatibility declaration for Firefox Fenix 159.0a1
+          val COMPATIBILITY_FENIX_159 = app.morphe.patcher.patch.Compatibility(
+              name = "Firefox Nightly",
+              packageName = "org.mozilla.fenix",
+              appIconColor = 0xFF7100,
+              targets = listOf(
+                  app.morphe.patcher.patch.AppTarget(version = "159.0a1")
+              )
+          )
+
+          /**
+           * Fingerprint to find the method that returns whether to use the Bottom Sheet Menu.
+           * Usually this is in FeatureFlags or Settings class.
+           * Update the definingClass and filters to match the exact method in your decompiled APK.
+           */
+          val bottomSheetMenuFlagFingerprint = Fingerprint(
+              definingClass = "Lorg/mozilla/fenix/utils/Settings;", // Or FeatureFlags
+              returnType = "Z",
+              filters = listOf(
+                  // opcode(Opcode.IGET_BOOLEAN) // Example filter
+              )
+          )
+
+          /**
+           * Fingerprint to find the menu builder method where we can inject the "Mod Settings" item.
+           * Look for the class that inflates the 3-dot menu (e.g., HomeMenu, BrowserMenu, or MenuDialogFragment).
+           */
+          val menuBuilderFingerprint = Fingerprint(
+              definingClass = "Lorg/mozilla/fenix/components/toolbar/BrowserToolbarView;", // Or HomeMenu
+              returnType = "V",
+              filters = listOf(
+                  // string("menu_item_title") // Find a unique string in the 3-dot menu
+              )
+          )
+
+          val modMenuTogglePatch = bytecodePatch(
+              name = "Mod Menu Toggle",
+              description = "Adds a 'Mod Settings' item to the 3-dot menu to toggle between the new Bottom Sheet menu and the old 3-dot menu.",
+              default = true
+          ) {
+              compatibleWith(COMPATIBILITY_FENIX_159)
+
+              // Merge the Java extension DEX file
+              extendWith("fenix-mod-menu.mpe")
+
+              execute {
+                  // 1. Override the Bottom Sheet Menu boolean flag to read from our Extension's SharedPreferences
+                  bottomSheetMenuFlagFingerprint.method.addInstructions(
+                      0,
+                      """
+                          # Pass Context (p0 or p1 depending on static/instance method)
+                          invoke-static {p0}, Lapp/ftl/extension/fenixmodmenu/FenixModMenu;->shouldUseBottomSheetMenu(Landroid/content/Context;)Z
+                          move-result v0
+                          return v0
+                      """.trimIndent()
+                  )
+
+                  // 2. Inject "Mod Settings" into the 3-dot menu
+                  menuBuilderFingerprint.let { fp ->
+                      val method = fp.method
+                      val instructions = method.instructionsOrNull?.toList() ?: return@let
+
+                      // Find the index where the menu is fully built or right before it returns
+                      // For XML menus, we can call menu.add() and set the click listener
+                      val insertIndex = instructions.size - 1
+
+                      // NOTE: The registers v0 (Menu) and v1 (Context) MUST be updated to match the
+                      // actual registers holding the Menu and Context objects in the target method.
+                      method.addInstructions(
+                          insertIndex,
+                          """
+                              # Add "Mod Settings" to the menu
+                              const/16 v2, 0x270f          # Unique Item ID (9999)
+                              const/4 v3, 0x0              # groupId
+                              const/16 v4, 0x270f          # order
+                              const-string v5, "Mod Settings"
+
+                              # menu.add(groupId, itemId, order, title)
+                              invoke-interface {v0, v3, v2, v4, v5}, Landroid/view/Menu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
+                              move-result-object v6
+
+                              # Create and attach click listener
+                              new-instance v7, Lapp/ftl/extension/fenixmodmenu/FenixModMenu${'$'}ModSettingsClickListener;
+                              invoke-direct {v7, v1}, Lapp/ftl/extension/fenixmodmenu/FenixModMenu${'$'}ModSettingsClickListener;-><init>(Landroid/content/Context;)V
+                              invoke-interface {v6, v7}, Landroid/view/MenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem${'$'}OnMenuItemClickListener;)Landroid/view/MenuItem;
+                          """.trimIndent()
+                      )
+                  }
+              }
+          }
+          KT_EOF
+          cat > FTL-Patches-dev/extensions/FenixModMenu/src/main/java/app/ftl/extension/fenixmodmenu/FenixModMenu.java <<'JAVA_EOF'
+          package app.ftl.extension.fenixmodmenu;
+
+          import android.content.Context;
+          import android.content.SharedPreferences;
+          import android.util.Log;
+          import android.view.MenuItem;
+
+          /**
+           * Extension class to handle Mod Menu settings for Firefox Fenix.
+           * Provides logic to toggle between Bottom Sheet 3-Dot Menu and Old 3-Dot Menu.
+           */
+          public class FenixModMenu {
+              private static final String PREFS_NAME = "FenixModMenuPrefs";
+              private static final String KEY_BOTTOM_SHEET_MENU = "use_bottom_sheet_menu";
+              private static final String TAG = "FenixModMenu";
+
+              /**
+               * Reads the user preference for using the Bottom Sheet Menu.
+               * Defaults to true (the new default in Fenix 159+).
+               */
+              public static boolean shouldUseBottomSheetMenu(Context context) {
+                  if (context == null) return true;
+                  try {
+                      SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+                      return prefs.getBoolean(KEY_BOTTOM_SHEET_MENU, true);
+                  } catch (Exception e) {
+                      Log.e(TAG, "Error reading preferences", e);
+                      return true;
+                  }
+              }
+
+              /**
+               * Toggles the Bottom Sheet Menu preference and saves it.
+               */
+              public static void toggleBottomSheetMenu(Context context) {
+                  if (context == null) return;
+                  try {
+                      SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+                      boolean currentValue = prefs.getBoolean(KEY_BOTTOM_SHEET_MENU, true);
+                      prefs.edit().putBoolean(KEY_BOTTOM_SHEET_MENU, !currentValue).apply();
+                      Log.d(TAG, "Bottom Sheet Menu toggled to: " + !currentValue);
+                  } catch (Exception e) {
+                      Log.e(TAG, "Error toggling preferences", e);
+                  }
+              }
+
+              /**
+               * A simple MenuItem click listener that toggles the setting when "Mod Settings" is clicked.
+               * Can be attached to the dynamically added "Mod Settings" menu item.
+               */
+              public static class ModSettingsClickListener implements MenuItem.OnMenuItemClickListener {
+                  private final Context context;
+
+                  public ModSettingsClickListener(Context context) {
+                      this.context = context;
+                  }
+
+                  @Override
+                  public boolean onMenuItemClick(MenuItem item) {
+                      toggleBottomSheetMenu(context);
+                      // Show a quick toast or snackbar to indicate the change
+                      try {
+                          android.widget.Toast.makeText(
+                              context,
+                              shouldUseBottomSheetMenu(context) ? "Bottom Sheet Menu: ON (Restart App)" : "Old Menu: ON (Restart App)",
+                              android.widget.Toast.LENGTH_SHORT
+                          ).show();
+                      } catch (Exception ignored) {}
+                      return true;
+                  }
+              }
+          }
+          JAVA_EOF
+          cat > FTL-Patches-dev/extensions/FenixModMenu/src/main/AndroidManifest.xml <<'XML_EOF'
+          <?xml version="1.0" encoding="utf-8"?>
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+              package="app.ftl.extension.fenixmodmenu" />
+          XML_EOF
+          cat > FTL-Patches-dev/extensions/FenixModMenu/build.gradle.kts <<'GRADLE_EOF'
+          plugins {
+              id("com.android.library")
+              id("kotlin-android")
+          }
+
+          android {
+              compileSdk = 34
+              defaultConfig {
+                  minSdk = 21
+              }
+              compileOptions {
+                  sourceCompatibility = JavaVersion.VERSION_1_8
+                  targetCompatibility = JavaVersion.VERSION_1_8
+              }
+          }
+          GRADLE_EOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Add Fenix Mod Menu patch files"
+          git push
