@@ -1,0 +1,306 @@
+.class public final Lorg/mozilla/fenix/components/menu/MenuFragment;
+.super Lcom/google/android/material/bottomsheet/BottomSheetDialogFragment;
+
+
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nMenuFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MenuFragment.kt\norg/mozilla/fenix/components/menu/MenuFragment\n+ 2 Composer.kt\nandroidx/compose/runtime/ComposerKt\n+ 3 Dp.kt\nandroidx/compose/ui/unit/DpKt\n+ 4 StoreProvider.kt\nmozilla/components/lib/state/helpers/StoreProvider$Companion\n+ 5 CompositionLocal.kt\nandroidx/compose/runtime/CompositionLocal\n*L\n1#1,368:1\n1047#2,6:369\n1047#2,6:375\n1047#2,6:383\n118#3:381\n118#3:382\n219#4,2:389\n222#4,2:392\n221#4,7:394\n264#4:401\n75#5:391\n*S KotlinDebug\n*F\n+ 1 MenuFragment.kt\norg/mozilla/fenix/components/menu/MenuFragment\n*L\n164#1:369,6\n170#1:375,6\n159#1:383,6\n179#1:381\n180#1:382\n159#1:389,2\n159#1:392,2\n159#1:394,7\n159#1:401\n159#1:391\n*E\n"
+.end annotation
+
+
+# instance fields
+.field public bottomSheetBehavior:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/material/bottomsheet/BottomSheetBehavior<",
+            "Landroid/view/View;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final snackbarHostState:Landroidx/compose/material3/SnackbarHostState;
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/material/bottomsheet/BottomSheetDialogFragment;-><init>()V
+
+    new-instance v0, Landroidx/compose/material3/SnackbarHostState;
+
+    invoke-direct {v0}, Landroidx/compose/material3/SnackbarHostState;-><init>()V
+
+    iput-object v0, p0, Lorg/mozilla/fenix/components/menu/MenuFragment;->snackbarHostState:Landroidx/compose/material3/SnackbarHostState;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final calculateMenuSheetHeight$1()I
+    .registers 4
+
+    iget-object v0, p0, Landroidx/fragment/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+
+    if-eqz v0, :cond_0
+
+    sget v1, Lcom/google/android/material/R$id;->design_bottom_sheet:I
+
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    invoke-static {v0}, Lmozilla/components/support/utils/ext/ViewKt;->getWindowInsets(Landroid/view/View;)Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {v0}, Lmozilla/components/support/utils/ext/WindowInsetsCompatKt;->top(Landroidx/core/view/WindowInsetsCompat;)I
+
+    move-result v0
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lmozilla/components/support/utils/ext/ContextKt;->isLandscape(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p0
+
+    iget p0, p0, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/16 v2, 0x38
+
+    invoke-static {v2, p0}, Lmozilla/components/support/ktx/android/util/DisplayMetricsKt;->dpToPx(ILandroid/util/DisplayMetrics;)I
+
+    move-result p0
+
+    sub-int p0, v1, p0
+
+    :goto_2
+    sub-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final calculateMenuSheetWidth$1()I
+    .registers 6
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lmozilla/components/support/utils/ext/ContextKt;->isLandscape(Landroid/content/Context;)Z
+
+    move-result v0
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {v1, v2}, Lmozilla/components/support/ktx/android/util/DisplayMetricsKt;->dpToPx(ILandroid/util/DisplayMetrics;)I
+
+    move-result v1
+
+    sget v2, Lorg/mozilla/fenix/R$dimen;->browser_menu_padding:I
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v2
+
+    mul-int/lit8 v2, v2, 0x2
+
+    sget v3, Lorg/mozilla/fenix/R$dimen;->browser_menu_max_width:I
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v3
+
+    add-int/2addr v3, v2
+
+    if-eqz v0, :cond_0
+
+    if-ge v1, v3, :cond_0
+
+    sub-int/2addr v1, v2
+
+    return v1
+
+    :cond_0
+    sget v0, Lorg/mozilla/fenix/R$dimen;->browser_menu_max_width:I
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
+    .registers 3
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    iget-object p1, p0, Lorg/mozilla/fenix/components/menu/MenuFragment;->bottomSheetBehavior:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuFragment;->calculateMenuSheetWidth$1()I
+
+    move-result v0
+
+    iput v0, p1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuFragment;->calculateMenuSheetHeight$1()I
+
+    move-result p0
+
+    iput p0, p1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxHeight:I
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
+    .registers 4
+
+    sget-object p1, Lorg/mozilla/fenix/GleanMetrics/Events;->INSTANCE:Lorg/mozilla/fenix/GleanMetrics/Events;
+
+    invoke-virtual {p1}, Lorg/mozilla/fenix/GleanMetrics/Events;->toolbarMenuVisible()Lmozilla/telemetry/glean/private/EventMetricType;
+
+    move-result-object p1
+
+    new-instance v0, Lmozilla/telemetry/glean/private/NoExtras;
+
+    invoke-direct {v0}, Lmozilla/telemetry/glean/private/NoExtras;-><init>()V
+
+    invoke-virtual {p1, v0}, Lmozilla/telemetry/glean/private/EventMetricType;->record(Lmozilla/telemetry/glean/private/EventExtras;)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    iget v0, p0, Landroidx/fragment/app/DialogFragment;->mTheme:I
+
+    new-instance v1, Lorg/mozilla/fenix/components/menu/MenuFragment$onCreateDialog$1;
+
+    invoke-direct {v1, p1, v0}, Lcom/google/android/material/bottomsheet/BottomSheetDialog;-><init>(Landroid/content/Context;I)V
+
+    new-instance p1, Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda0;
+
+    invoke-direct {p1, v1, p0}, Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda0;-><init>(Lorg/mozilla/fenix/components/menu/MenuFragment$onCreateDialog$1;Lorg/mozilla/fenix/components/menu/MenuFragment;)V
+
+    invoke-virtual {v1, p1}, Landroid/app/Dialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
+
+    return-object v1
+.end method
+
+.method public final onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    .registers 5
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p1, Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda1;
+
+    invoke-direct {p1, p0}, Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda1;-><init>(Lorg/mozilla/fenix/components/menu/MenuFragment;)V
+
+    new-instance p2, Landroidx/compose/runtime/internal/ComposableLambdaImpl;
+
+    const p3, 0x713bba35
+
+    const/4 v0, 0x1
+
+    invoke-direct {p2, p3, v0, p1}, Landroidx/compose/runtime/internal/ComposableLambdaImpl;-><init>(IZLjava/lang/Object;)V
+
+    invoke-static {p0, p2}, Landroidx/fragment/compose/FragmentKt;->content(Landroidx/fragment/app/Fragment;Landroidx/compose/runtime/internal/ComposableLambdaImpl;)Landroidx/compose/ui/platform/ComposeView;
+
+    move-result-object p0
+
+    return-object p0
+.end method

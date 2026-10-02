@@ -1,0 +1,582 @@
+.class public final Lorg/mozilla/fenix/components/menu/compose/IPProtectionMenuItemKt;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nIPProtectionMenuItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 IPProtectionMenuItem.kt\norg/mozilla/fenix/components/menu/compose/IPProtectionMenuItemKt\n+ 2 Composer.kt\nandroidx/compose/runtime/ComposerKt\n+ 3 Row.kt\nandroidx/compose/foundation/layout/RowKt\n+ 4 Layout.kt\nandroidx/compose/ui/layout/LayoutKt\n+ 5 Composables.kt\nandroidx/compose/runtime/ComposablesKt\n+ 6 Dp.kt\nandroidx/compose/ui/unit/DpKt\n+ 7 Box.kt\nandroidx/compose/foundation/layout/BoxKt\n*L\n1#1,187:1\n1047#2,6:188\n1047#2,6:194\n1047#2,6:272\n1047#2,6:278\n99#3:200\n96#3,9:201\n106#3:271\n81#4,6:210\n88#4,6:225\n81#4,6:242\n88#4,6:257\n96#4:266\n96#4:270\n402#5,9:216\n411#5:231\n402#5,9:248\n411#5,3:263\n412#5,2:268\n118#6:232\n118#6:284\n70#7:233\n68#7,8:234\n77#7:267\n*S KotlinDebug\n*F\n+ 1 IPProtectionMenuItem.kt\norg/mozilla/fenix/components/menu/compose/IPProtectionMenuItemKt\n*L\n77#1:188,6\n78#1:194,6\n181#1:272,6\n182#1:278,6\n88#1:200\n88#1:201,9\n88#1:271\n88#1:210,6\n88#1:225,6\n103#1:242,6\n103#1:257,6\n103#1:266\n88#1:270\n88#1:216,9\n88#1:231\n103#1:248,9\n103#1:263,3\n88#1:268,2\n107#1:232\n45#1:284\n103#1:233\n103#1:234,8\n103#1:267\n*E\n"
+.end annotation
+
+
+# direct methods
+.method public static final IPProtectionMenuItem(Lorg/mozilla/fenix/components/menu/store/IPProtectionMenuState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V
+    .registers 39
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lorg/mozilla/fenix/components/menu/store/IPProtectionMenuState;",
+            "Lkotlin/jvm/functions/Function0<",
+            "Lkotlin/Unit;",
+            ">;",
+            "Lkotlin/jvm/functions/Function0<",
+            "Lkotlin/Unit;",
+            ">;",
+            "Landroidx/compose/runtime/Composer;",
+            "I)V"
+        }
+    .end annotation
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, p2
+
+    move/from16 v3, p4
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v4, v0, Lorg/mozilla/fenix/components/menu/store/IPProtectionMenuState;->status:Lorg/mozilla/fenix/components/menu/store/IPProtectionMenuStatus;
+
+    const v5, 0x5317d8c5
+
+    move-object/from16 v6, p3
+
+    invoke-static {v1, v2, v6, v5}, Lmozilla/components/feature/importer/ImporterDialogKt$$ExternalSyntheticOutline0;->m(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/GapComposer;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v0}, Landroidx/compose/runtime/GapComposer;->changed(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    const/4 v12, 0x4
+
+    const/4 v13, 0x2
+
+    if-eqz v5, :cond_0
+
+    move v5, v12
+
+    goto :goto_0
+
+    :cond_0
+    move v5, v13
+
+    :goto_0
+    or-int/2addr v5, v3
+
+    invoke-virtual {v10, v1}, Landroidx/compose/runtime/GapComposer;->changedInstance(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    const/16 v7, 0x20
+
+    if-eqz v6, :cond_1
+
+    move v6, v7
+
+    goto :goto_1
+
+    :cond_1
+    const/16 v6, 0x10
+
+    :goto_1
+    or-int/2addr v5, v6
+
+    invoke-virtual {v10, v2}, Landroidx/compose/runtime/GapComposer;->changedInstance(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    const/16 v6, 0x100
+
+    goto :goto_2
+
+    :cond_2
+    const/16 v6, 0x80
+
+    :goto_2
+    or-int/2addr v5, v6
+
+    and-int/lit16 v6, v5, 0x93
+
+    const/16 v8, 0x92
+
+    const/4 v14, 0x1
+
+    const/4 v15, 0x0
+
+    if-eq v6, v8, :cond_3
+
+    move v6, v14
+
+    goto :goto_3
+
+    :cond_3
+    move v6, v15
+
+    :goto_3
+    and-int/lit8 v8, v5, 0x1
+
+    invoke-virtual {v10, v8, v6}, Landroidx/compose/runtime/GapComposer;->shouldExecute(IZ)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_14
+
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v6
+
+    const/4 v8, 0x5
+
+    const/4 v9, 0x3
+
+    if-eqz v6, :cond_9
+
+    if-eq v6, v14, :cond_8
+
+    if-eq v6, v13, :cond_7
+
+    if-eq v6, v9, :cond_6
+
+    if-eq v6, v12, :cond_5
+
+    if-ne v6, v8, :cond_4
+
+    const v6, 0x4db208e4
+
+    invoke-virtual {v10, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v6, Lorg/mozilla/fenix/R$string;->ip_protection_menu_try_vpn_cta:I
+
+    invoke-static {v6, v10}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v10, v15}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_4
+
+    :cond_4
+    const v0, 0x4db1c539
+
+    invoke-static {v10, v0, v15}, Landroidx/compose/material3/internal/TextFieldImplKt$$ExternalSyntheticOutline0;->m(Landroidx/compose/runtime/GapComposer;IZ)Lkotlin/NoWhenBranchMatchedException;
+
+    move-result-object v0
+
+    throw v0
+
+    :cond_5
+    const v6, 0x4db1fcbe
+
+    invoke-virtual {v10, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v6, Lorg/mozilla/fenix/R$string;->ip_protection_menu_error:I
+
+    invoke-static {v6, v10}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v10, v15}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_4
+
+    :cond_6
+    const v6, 0x4db1f01f
+
+    invoke-virtual {v10, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v6, Lorg/mozilla/fenix/R$string;->ip_protection_menu_paused:I
+
+    invoke-static {v6, v10}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v10, v15}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_4
+
+    :cond_7
+    const v6, 0x4db1d682
+
+    invoke-virtual {v10, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v6, Lorg/mozilla/fenix/R$string;->preferences_ip_protection_on:I
+
+    invoke-static {v6, v10}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v10, v15}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_4
+
+    :cond_8
+    const v6, 0x4db1e2e3
+
+    invoke-virtual {v10, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v6, Lorg/mozilla/fenix/R$string;->ip_protection_menu_connecting:I
+
+    invoke-static {v6, v10}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v10, v15}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_4
+
+    :cond_9
+    const v6, 0x4db1ca63
+
+    invoke-virtual {v10, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v6, Lorg/mozilla/fenix/R$string;->preferences_ip_protection_off:I
+
+    invoke-static {v6, v10}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v10, v15}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    :goto_4
+    sget-object v11, Lorg/mozilla/fenix/components/menu/store/IPProtectionMenuStatus;->AuthRequired:Lorg/mozilla/fenix/components/menu/store/IPProtectionMenuStatus;
+
+    if-ne v4, v11, :cond_a
+
+    move v11, v15
+
+    goto :goto_5
+
+    :cond_a
+    move v11, v13
+
+    :goto_5
+    sget v8, Lorg/mozilla/fenix/R$string;->ip_protection_toggle_label:I
+
+    invoke-static {v8, v10}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v16
+
+    sget-object v8, Landroidx/compose/ui/Modifier$Companion;->$$INSTANCE:Landroidx/compose/ui/Modifier$Companion;
+
+    const/4 v12, 0x0
+
+    invoke-static {v8, v12, v9}, Landroidx/compose/foundation/layout/SizeKt;->wrapContentSize$default(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/BiasAlignment;I)Landroidx/compose/ui/Modifier;
+
+    move-result-object v8
+
+    sget-object v12, Landroidx/compose/material3/ShapesKt;->LocalShapes:Landroidx/compose/runtime/StaticProvidableCompositionLocal;
+
+    invoke-virtual {v10, v12}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Landroidx/compose/material3/Shapes;
+
+    iget-object v12, v12, Landroidx/compose/material3/Shapes;->extraSmall:Landroidx/compose/foundation/shape/CornerBasedShape;
+
+    invoke-static {v8, v12}, Landroidx/compose/ui/draw/ClipKt;->clip(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v8
+
+    sget-object v12, Landroidx/compose/material3/ColorSchemeKt;->LocalColorScheme:Landroidx/compose/runtime/StaticProvidableCompositionLocal;
+
+    invoke-virtual {v10, v12}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v19
+
+    move-object/from16 v15, v19
+
+    check-cast v15, Landroidx/compose/material3/ColorScheme;
+
+    iget-wide v14, v15, Landroidx/compose/material3/ColorScheme;->surface:J
+
+    sget-object v13, Landroidx/compose/ui/graphics/RectangleShapeKt;->RectangleShape:Landroidx/compose/ui/graphics/RectangleShapeKt$RectangleShape$1;
+
+    invoke-static {v8, v14, v15, v13}, Landroidx/compose/foundation/BackgroundKt;->background-bw27NRU(Landroidx/compose/ui/Modifier;JLandroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v8
+
+    new-instance v13, Landroidx/compose/ui/semantics/Role;
+
+    invoke-direct {v13, v11}, Landroidx/compose/ui/semantics/Role;-><init>(I)V
+
+    and-int/lit8 v5, v5, 0x70
+
+    if-ne v5, v7, :cond_b
+
+    const/4 v5, 0x1
+
+    goto :goto_6
+
+    :cond_b
+    const/4 v5, 0x0
+
+    :goto_6
+    invoke-virtual {v10}, Landroidx/compose/runtime/GapComposer;->rememberedValue()Ljava/lang/Object;
+
+    move-result-object v7
+
+    sget-object v11, Landroidx/compose/runtime/Composer$Companion;->Empty:Landroidx/compose/runtime/Composer$Companion$Empty$1;
+
+    if-nez v5, :cond_c
+
+    if-ne v7, v11, :cond_d
+
+    :cond_c
+    new-instance v7, Landroidx/compose/animation/core/Transition$$ExternalSyntheticLambda3;
+
+    invoke-direct {v7, v1, v9}, Landroidx/compose/animation/core/Transition$$ExternalSyntheticLambda3;-><init>(Ljava/lang/Object;B)V
+
+    invoke-virtual {v10, v7}, Landroidx/compose/runtime/GapComposer;->updateRememberedValue(Ljava/lang/Object;)V
+
+    :cond_d
+    check-cast v7, Lkotlin/jvm/functions/Function0;
+
+    const/4 v5, 0x2
+
+    invoke-static {v8, v13, v7, v5}, Lmozilla/components/compose/base/modifier/ModifierKt;->debouncedClickable-xaSBTPU$default(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/semantics/Role;Lkotlin/jvm/functions/Function0;I)Landroidx/compose/ui/Modifier;
+
+    move-result-object v7
+
+    invoke-virtual {v10, v6}, Landroidx/compose/runtime/GapComposer;->changed(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    invoke-virtual {v10}, Landroidx/compose/runtime/GapComposer;->rememberedValue()Ljava/lang/Object;
+
+    move-result-object v8
+
+    if-nez v5, :cond_e
+
+    if-ne v8, v11, :cond_f
+
+    :cond_e
+    new-instance v8, Lorg/mozilla/fenix/translations/TranslationsDialogFragment$$ExternalSyntheticLambda13;
+
+    const/4 v5, 0x1
+
+    invoke-direct {v8, v6, v5}, Lorg/mozilla/fenix/translations/TranslationsDialogFragment$$ExternalSyntheticLambda13;-><init>(Ljava/lang/Object;B)V
+
+    invoke-virtual {v10, v8}, Landroidx/compose/runtime/GapComposer;->updateRememberedValue(Ljava/lang/Object;)V
+
+    :cond_f
+    check-cast v8, Lkotlin/jvm/functions/Function1;
+
+    const/4 v5, 0x0
+
+    invoke-static {v7, v5, v8}, Landroidx/compose/ui/semantics/SemanticsModifierKt;->semantics(Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v13
+
+    invoke-virtual {v10, v12}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroidx/compose/material3/ColorScheme;
+
+    iget-wide v7, v5, Landroidx/compose/material3/ColorScheme;->error:J
+
+    const/16 v11, 0x1ef
+
+    move-object v5, v6
+
+    move v12, v9
+
+    move-wide v8, v7
+
+    const-wide/16 v6, 0x0
+
+    move v14, v12
+
+    const/4 v12, 0x5
+
+    invoke-static/range {v6 .. v11}, Landroidx/compose/material3/ListItemDefaults;->colors-J08w3-E(JJLandroidx/compose/runtime/Composer;I)Landroidx/compose/material3/ListItemColors;
+
+    move-result-object v9
+
+    iget v6, v0, Lorg/mozilla/fenix/components/menu/store/IPProtectionMenuState;->dataLimitGb:I
+
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v4
+
+    if-eqz v4, :cond_10
+
+    const/4 v7, 0x1
+
+    if-eq v4, v7, :cond_10
+
+    const/4 v7, 0x2
+
+    if-eq v4, v7, :cond_10
+
+    if-eq v4, v14, :cond_12
+
+    const/4 v7, 0x4
+
+    if-eq v4, v7, :cond_10
+
+    if-ne v4, v12, :cond_11
+
+    :cond_10
+    const/4 v4, 0x0
+
+    goto :goto_7
+
+    :cond_11
+    invoke-static {}, Lkotlin/LazyKt__LazyJVMKt$$ExternalSyntheticBUOutline0;->m()V
+
+    return-void
+
+    :cond_12
+    if-lez v6, :cond_13
+
+    const v4, -0x62168d85
+
+    invoke-virtual {v10, v4}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v4, Lorg/mozilla/fenix/R$string;->ip_protection_menu_limit_reached:I
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    filled-new-array {v6}, [Ljava/lang/Object;
+
+    move-result-object v6
+
+    invoke-static {v4, v6, v10}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(I[Ljava/lang/Object;Landroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v12
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v10, v4}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    move-object v11, v12
+
+    goto :goto_8
+
+    :cond_13
+    const/4 v4, 0x0
+
+    const v6, -0x6214dc7d
+
+    invoke-virtual {v10, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    invoke-virtual {v10, v4}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    :goto_7
+    const/4 v11, 0x0
+
+    :goto_8
+    sget v6, Lmozilla/components/ui/icons/R$drawable;->mozac_ic_globe_24:I
+
+    invoke-static {v6, v10, v4}, Landroidx/compose/ui/res/PainterResources_androidKt;->painterResource(ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/painter/Painter;
+
+    move-result-object v18
+
+    sget-object v4, Lmozilla/components/compose/base/theme/AcornThemeKt;->localLayout:Landroidx/compose/runtime/StaticProvidableCompositionLocal;
+
+    invoke-virtual {v10, v4}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lmozilla/components/compose/base/theme/layout/AcornLayout;
+
+    iget-object v4, v4, Lmozilla/components/compose/base/theme/layout/AcornLayout;->space:Lmozilla/components/compose/base/theme/layout/AcornSpace;
+
+    invoke-virtual {v4}, Lmozilla/components/compose/base/theme/layout/AcornSpace;->getDynamic200-D9Ej5fM()F
+
+    move-result v4
+
+    const/16 v6, 0xe
+
+    const/4 v7, 0x0
+
+    invoke-static {v4, v7, v7, v6}, Landroidx/compose/foundation/layout/PaddingKt;->PaddingValues-a9UjIt4$default(FFFI)Landroidx/compose/foundation/layout/PaddingValuesImpl;
+
+    move-result-object v24
+
+    new-instance v4, Lorg/mozilla/fenix/components/menu/compose/IPProtectionMenuItemKt$$ExternalSyntheticLambda2;
+
+    invoke-direct {v4, v5, v0, v2}, Lorg/mozilla/fenix/components/menu/compose/IPProtectionMenuItemKt$$ExternalSyntheticLambda2;-><init>(Ljava/lang/String;Lorg/mozilla/fenix/components/menu/store/IPProtectionMenuState;Lkotlin/jvm/functions/Function0;)V
+
+    const v5, 0x20063757
+
+    invoke-static {v5, v4, v10}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->rememberComposableLambda(ILkotlin/Function;Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/internal/ComposableLambdaImpl;
+
+    move-result-object v28
+
+    const/16 v32, 0x30
+
+    const v33, 0x1deed4
+
+    const/4 v8, 0x0
+
+    move-object/from16 v29, v10
+
+    const/4 v10, 0x0
+
+    const/4 v12, 0x0
+
+    move-object v7, v13
+
+    const/4 v13, 0x0
+
+    const/high16 v14, 0x42400000
+
+    const/4 v15, 0x0
+
+    move-object/from16 v6, v16
+
+    const-wide/16 v16, 0x0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    const/16 v21, 0x0
+
+    const-wide/16 v22, 0x0
+
+    const/16 v25, 0x0
+
+    const/16 v26, 0x0
+
+    const/16 v27, 0x0
+
+    const/high16 v30, 0x6000000
+
+    const/16 v31, 0x200
+
+    invoke-static/range {v6 .. v33}, Lorg/mozilla/fenix/compose/list/ListItemKt;->IconListItem-XfM40Ao(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Modifier;Landroidx/compose/material3/ListItemColors;ILjava/lang/String;IZFLkotlin/jvm/functions/Function0;JLandroidx/compose/ui/graphics/painter/Painter;Ljava/lang/String;ZZJLandroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/ui/graphics/painter/Painter;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;IIII)V
+
+    goto :goto_9
+
+    :cond_14
+    move-object/from16 v29, v10
+
+    invoke-virtual/range {v29 .. v29}, Landroidx/compose/runtime/GapComposer;->skipToGroupEnd()V
+
+    :goto_9
+    invoke-virtual/range {v29 .. v29}, Landroidx/compose/runtime/GapComposer;->endRestartGroup()Landroidx/compose/runtime/RecomposeScopeImpl;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_15
+
+    new-instance v5, Lorg/mozilla/fenix/components/menu/compose/IPProtectionMenuItemKt$$ExternalSyntheticLambda3;
+
+    invoke-direct {v5, v0, v1, v2, v3}, Lorg/mozilla/fenix/components/menu/compose/IPProtectionMenuItemKt$$ExternalSyntheticLambda3;-><init>(Lorg/mozilla/fenix/components/menu/store/IPProtectionMenuState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;I)V
+
+    iput-object v5, v4, Landroidx/compose/runtime/RecomposeScopeImpl;->block:Lkotlin/jvm/functions/Function2;
+
+    :cond_15
+    return-void
+.end method

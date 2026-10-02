@@ -1,0 +1,810 @@
+.class public final Lorg/mozilla/fenix/components/menu/MenuDialogFragment;
+.super Lcom/google/android/material/bottomsheet/BottomSheetDialogFragment;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lorg/mozilla/fenix/components/menu/MenuDialogFragment$WhenMappings;
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nMenuDialogFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MenuDialogFragment.kt\norg/mozilla/fenix/components/menu/MenuDialogFragment\n+ 2 FragmentNavArgsLazy.kt\nandroidx/navigation/fragment/FragmentNavArgsLazyKt\n+ 3 StoreProvider.kt\nmozilla/components/lib/state/helpers/StoreProvider$Companion\n+ 4 Fragment.kt\norg/mozilla/fenix/ext/FragmentKt\n+ 5 Uri.kt\nandroidx/core/net/UriKt\n+ 6 SnapshotState.kt\nandroidx/compose/runtime/SnapshotStateKt__SnapshotStateKt\n+ 7 ColorDrawable.kt\nandroidx/core/graphics/drawable/ColorDrawableKt\n+ 8 Composer.kt\nandroidx/compose/runtime/ComposerKt\n+ 9 Transform.kt\nkotlinx/coroutines/flow/FlowKt__TransformKt\n+ 10 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n+ 11 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt\n+ 12 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 13 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 14 CompositionLocal.kt\nandroidx/compose/runtime/CompositionLocal\n+ 15 Dp.kt\nandroidx/compose/ui/unit/DpKt\n*L\n1#1,1154:1\n42#2,3:1155\n164#3:1158\n264#3:1159\n130#4,4:1160\n130#4,2:1164\n132#4,2:1167\n29#5:1166\n85#6:1169\n85#6:1170\n85#6:1171\n85#6:1172\n85#6:1173\n85#6:1174\n85#6:1175\n85#6:1176\n85#6:1177\n85#6:1178\n85#6:1179\n85#6:1180\n85#6:1181\n85#6:1182\n85#6:1183\n85#6:1184\n85#6:1185\n85#6:1186\n85#6:1187\n85#6:1188\n85#6:1189\n117#6,2:1190\n85#6:1192\n117#6,2:1193\n85#6:1195\n117#6,2:1196\n85#6:1198\n27#7:1199\n1047#8,6:1200\n1047#8,6:1206\n1047#8,6:1212\n1047#8,6:1218\n1047#8,6:1224\n1047#8,6:1230\n1047#8,6:1236\n1047#8,6:1242\n1047#8,6:1248\n1047#8,6:1254\n1047#8,6:1260\n1047#8,6:1266\n1047#8,6:1272\n1047#8,6:1278\n1047#8,6:1284\n1047#8,6:1290\n1047#8,6:1296\n1047#8,6:1302\n1047#8,3:1308\n1050#8,3:1316\n1047#8,3:1319\n1050#8,3:1327\n1047#8,3:1330\n1050#8,3:1338\n1047#8,3:1341\n1050#8,3:1349\n1047#8,3:1352\n1050#8,3:1360\n1047#8,6:1363\n1047#8,6:1369\n1047#8,6:1375\n1047#8,6:1381\n1047#8,6:1387\n1047#8,6:1393\n1047#8,6:1399\n1047#8,6:1405\n1047#8,6:1411\n1047#8,6:1417\n1047#8,6:1423\n1047#8,6:1429\n1047#8,6:1435\n1047#8,6:1441\n1047#8,6:1447\n1047#8,6:1453\n1047#8,6:1459\n1047#8,6:1465\n1047#8,6:1471\n1047#8,6:1477\n1047#8,6:1483\n1047#8,6:1489\n1047#8,6:1495\n1047#8,6:1501\n1047#8,3:1507\n1050#8,3:1515\n1047#8,6:1518\n1047#8,6:1524\n1047#8,6:1530\n1047#8,6:1536\n1047#8,6:1542\n1047#8,6:1548\n1047#8,6:1554\n1047#8,6:1560\n1047#8,6:1566\n1047#8,6:1572\n1047#8,6:1578\n1047#8,6:1584\n1047#8,6:1590\n1047#8,6:1596\n1047#8,3:1602\n1050#8,3:1610\n1047#8,3:1613\n1050#8,3:1621\n1047#8,3:1624\n1050#8,3:1632\n1047#8,3:1635\n1050#8,3:1643\n1047#8,3:1646\n1050#8,3:1654\n1047#8,3:1657\n1050#8,3:1665\n1047#8,3:1668\n1050#8,3:1676\n1047#8,3:1679\n1050#8,3:1687\n1047#8,3:1690\n1050#8,3:1698\n1047#8,3:1701\n1050#8,3:1709\n1047#8,3:1712\n1050#8,3:1720\n1047#8,6:1723\n1047#8,3:1729\n1050#8,3:1737\n1047#8,3:1740\n1050#8,3:1748\n1047#8,6:1751\n1047#8,6:1757\n1047#8,3:1763\n1050#8,3:1772\n1047#8,6:1775\n1047#8,6:1781\n1047#8,6:1788\n1047#8,6:1794\n1047#8,3:1800\n1050#8,3:1808\n1047#8,6:1812\n49#9:1311\n51#9:1315\n49#9:1322\n51#9:1326\n49#9:1333\n51#9:1337\n49#9:1344\n51#9:1348\n49#9:1355\n51#9:1359\n49#9:1510\n51#9:1514\n49#9:1605\n51#9:1609\n49#9:1616\n51#9:1620\n49#9:1627\n51#9:1631\n49#9:1638\n51#9:1642\n49#9:1649\n51#9:1653\n49#9:1660\n51#9:1664\n49#9:1671\n51#9:1675\n49#9:1682\n51#9:1686\n49#9:1693\n51#9:1697\n49#9:1704\n51#9:1708\n49#9:1715\n51#9:1719\n49#9:1732\n51#9:1736\n49#9:1743\n51#9:1747\n49#9:1803\n51#9:1807\n45#10:1312\n49#10:1314\n45#10:1323\n49#10:1325\n45#10:1334\n49#10:1336\n45#10:1345\n49#10:1347\n45#10:1356\n49#10:1358\n45#10:1511\n49#10:1513\n45#10:1606\n49#10:1608\n45#10:1617\n49#10:1619\n45#10:1628\n49#10:1630\n45#10:1639\n49#10:1641\n45#10:1650\n49#10:1652\n45#10:1661\n49#10:1663\n45#10:1672\n49#10:1674\n45#10:1683\n49#10:1685\n45#10:1694\n49#10:1696\n45#10:1705\n49#10:1707\n45#10:1716\n49#10:1718\n45#10:1733\n49#10:1735\n45#10:1744\n49#10:1746\n45#10:1804\n49#10:1806\n105#11:1313\n105#11:1324\n105#11:1335\n105#11:1346\n105#11:1357\n105#11:1512\n105#11:1607\n105#11:1618\n105#11:1629\n105#11:1640\n105#11:1651\n105#11:1662\n105#11:1673\n105#11:1684\n105#11:1695\n105#11:1706\n105#11:1717\n105#11:1734\n105#11:1745\n105#11:1805\n1459#12,2:1766\n1474#12,2:1768\n1477#12:1771\n1#13:1770\n75#14:1787\n118#15:1811\n118#15:1818\n118#15:1819\n*S KotlinDebug\n*F\n+ 1 MenuDialogFragment.kt\norg/mozilla/fenix/components/menu/MenuDialogFragment\n*L\n148#1:1155,3\n867#1:1158\n867#1:1159\n1095#1:1160,4\n1114#1:1164,2\n1114#1:1167,2\n1119#1:1166\n496#1:1169\n500#1:1170\n504#1:1171\n518#1:1172\n524#1:1173\n760#1:1174\n326#1:1175\n334#1:1176\n339#1:1177\n346#1:1178\n353#1:1179\n360#1:1180\n367#1:1181\n372#1:1182\n377#1:1183\n382#1:1184\n387#1:1185\n423#1:1186\n428#1:1187\n433#1:1188\n435#1:1189\n435#1:1190,2\n283#1:1192\n283#1:1193,2\n287#1:1195\n287#1:1196,2\n289#1:1198\n203#1:1199\n669#1:1200,6\n672#1:1206,6\n675#1:1212,6\n678#1:1218,6\n685#1:1224,6\n688#1:1230,6\n696#1:1236,6\n700#1:1242,6\n704#1:1248,6\n707#1:1254,6\n711#1:1260,6\n735#1:1266,6\n732#1:1272,6\n738#1:1278,6\n741#1:1284,6\n744#1:1290,6\n747#1:1296,6\n837#1:1302,6\n496#1:1308,3\n496#1:1316,3\n500#1:1319,3\n500#1:1327,3\n504#1:1330,3\n504#1:1338,3\n518#1:1341,3\n518#1:1349,3\n524#1:1352,3\n524#1:1360,3\n607#1:1363,6\n622#1:1369,6\n558#1:1375,6\n566#1:1381,6\n569#1:1387,6\n572#1:1393,6\n575#1:1399,6\n578#1:1405,6\n585#1:1411,6\n588#1:1417,6\n592#1:1423,6\n596#1:1429,6\n610#1:1435,6\n613#1:1441,6\n616#1:1447,6\n619#1:1453,6\n625#1:1459,6\n628#1:1465,6\n631#1:1471,6\n634#1:1477,6\n637#1:1483,6\n645#1:1489,6\n648#1:1495,6\n640#1:1501,6\n760#1:1507,3\n760#1:1515,3\n787#1:1518,6\n795#1:1524,6\n802#1:1530,6\n805#1:1536,6\n808#1:1542,6\n811#1:1548,6\n814#1:1554,6\n817#1:1560,6\n820#1:1566,6\n823#1:1572,6\n826#1:1578,6\n829#1:1584,6\n849#1:1590,6\n852#1:1596,6\n326#1:1602,3\n326#1:1610,3\n334#1:1613,3\n334#1:1621,3\n339#1:1624,3\n339#1:1632,3\n346#1:1635,3\n346#1:1643,3\n353#1:1646,3\n353#1:1654,3\n360#1:1657,3\n360#1:1665,3\n367#1:1668,3\n367#1:1676,3\n372#1:1679,3\n372#1:1687,3\n377#1:1690,3\n377#1:1698,3\n382#1:1701,3\n382#1:1709,3\n387#1:1712,3\n387#1:1720,3\n416#1:1723,6\n423#1:1729,3\n423#1:1737,3\n428#1:1740,3\n428#1:1748,3\n433#1:1751,6\n435#1:1757,6\n446#1:1763,3\n446#1:1772,3\n452#1:1775,6\n458#1:1781,6\n283#1:1788,6\n287#1:1794,6\n289#1:1800,3\n289#1:1808,3\n299#1:1812,6\n497#1:1311\n497#1:1315\n501#1:1322\n501#1:1326\n505#1:1333\n505#1:1337\n519#1:1344\n519#1:1348\n525#1:1355\n525#1:1359\n761#1:1510\n761#1:1514\n327#1:1605\n327#1:1609\n335#1:1616\n335#1:1620\n340#1:1627\n340#1:1631\n347#1:1638\n347#1:1642\n354#1:1649\n354#1:1653\n361#1:1660\n361#1:1664\n368#1:1671\n368#1:1675\n373#1:1682\n373#1:1686\n378#1:1693\n378#1:1697\n383#1:1704\n383#1:1708\n388#1:1715\n388#1:1719\n424#1:1732\n424#1:1736\n429#1:1743\n429#1:1747\n290#1:1803\n290#1:1807\n497#1:1312\n497#1:1314\n501#1:1323\n501#1:1325\n505#1:1334\n505#1:1336\n519#1:1345\n519#1:1347\n525#1:1356\n525#1:1358\n761#1:1511\n761#1:1513\n327#1:1606\n327#1:1608\n335#1:1617\n335#1:1619\n340#1:1628\n340#1:1630\n347#1:1639\n347#1:1641\n354#1:1650\n354#1:1652\n361#1:1661\n361#1:1663\n368#1:1672\n368#1:1674\n373#1:1683\n373#1:1685\n378#1:1694\n378#1:1696\n383#1:1705\n383#1:1707\n388#1:1716\n388#1:1718\n424#1:1733\n424#1:1735\n429#1:1744\n429#1:1746\n290#1:1804\n290#1:1806\n497#1:1313\n501#1:1324\n505#1:1335\n519#1:1346\n525#1:1357\n761#1:1512\n327#1:1607\n335#1:1618\n340#1:1629\n347#1:1640\n354#1:1651\n361#1:1662\n368#1:1673\n373#1:1684\n378#1:1695\n383#1:1706\n388#1:1717\n424#1:1734\n429#1:1745\n290#1:1805\n447#1:1766,2\n447#1:1768,2\n447#1:1771\n261#1:1787\n298#1:1811\n312#1:1818\n313#1:1819\n*E\n"
+.end annotation
+
+
+# static fields
+.field public static sRef:Ljava/lang/ref/WeakReference;
+
+
+# instance fields
+.field public final args$delegate:Landroidx/navigation/NavArgsLazy;
+
+.field public bottomSheetBehavior:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/android/material/bottomsheet/BottomSheetBehavior<",
+            "Landroid/view/View;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final browserStore$delegate:Lkotlin/SynchronizedLazyImpl;
+
+.field public final deleteBrowsingDataController$delegate:Lkotlin/SynchronizedLazyImpl;
+
+.field public final ipProtectionMenuBinding:Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper<",
+            "Lorg/mozilla/fenix/components/menu/IPProtectionMenuBinding;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public final ipProtectionSnackbarBinding:Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper<",
+            "Lorg/mozilla/fenix/ipprotection/ui/IPProtectionSnackbarBinding;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public isPrivate:Z
+
+.field public menuStore:Lorg/mozilla/fenix/components/menu/store/MenuStore;
+
+.field public final snackbarHostState:Landroidx/compose/material3/SnackbarHostState;
+
+.field public final webExtensionsMenuBinding:Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper<",
+            "Lorg/mozilla/fenix/components/menu/WebExtensionsMenuBinding;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 4
+
+    invoke-direct {p0}, Lcom/google/android/material/bottomsheet/BottomSheetDialogFragment;-><init>()V
+
+    new-instance v0, Landroidx/navigation/NavArgsLazy;
+
+    const-class v1, Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/jvm/internal/ClassReference;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$special$$inlined$navArgs$1;
+
+    invoke-direct {v2, p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$special$$inlined$navArgs$1;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;)V
+
+    invoke-direct {v0, v1, v2}, Landroidx/navigation/NavArgsLazy;-><init>(Lkotlin/jvm/internal/ClassReference;Lkotlin/jvm/functions/Function0;)V
+
+    iput-object v0, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->args$delegate:Landroidx/navigation/NavArgsLazy;
+
+    new-instance v0, Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+
+    invoke-direct {v0}, Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;-><init>()V
+
+    iput-object v0, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->webExtensionsMenuBinding:Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+
+    new-instance v0, Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+
+    invoke-direct {v0}, Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;-><init>()V
+
+    iput-object v0, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->ipProtectionMenuBinding:Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+
+    new-instance v0, Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+
+    invoke-direct {v0}, Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;-><init>()V
+
+    iput-object v0, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->ipProtectionSnackbarBinding:Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+
+    new-instance v0, Landroidx/compose/material3/SnackbarHostState;
+
+    invoke-direct {v0}, Landroidx/compose/material3/SnackbarHostState;-><init>()V
+
+    iput-object v0, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->snackbarHostState:Landroidx/compose/material3/SnackbarHostState;
+
+    new-instance v0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda1;
+
+    invoke-direct {v0, p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda1;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;)V
+
+    new-instance v1, Lkotlin/SynchronizedLazyImpl;
+
+    invoke-direct {v1, v0}, Lkotlin/SynchronizedLazyImpl;-><init>(Lkotlin/jvm/functions/Function0;)V
+
+    iput-object v1, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->browserStore$delegate:Lkotlin/SynchronizedLazyImpl;
+
+    new-instance v0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda2;
+
+    invoke-direct {v0, p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda2;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;)V
+
+    new-instance v1, Lkotlin/SynchronizedLazyImpl;
+
+    invoke-direct {v1, v0}, Lkotlin/SynchronizedLazyImpl;-><init>(Lkotlin/jvm/functions/Function0;)V
+
+    iput-object v1, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->deleteBrowsingDataController$delegate:Lkotlin/SynchronizedLazyImpl;
+
+    return-void
+.end method
+
+.method public static final setExtensionsWide(Z)V
+    .registers 7
+
+    sget-object v0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->sRef:Ljava/lang/ref/WeakReference;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;
+
+    if-eqz v0, :cond_1
+
+    iget-object v1, v0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->bottomSheetBehavior:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    iget v3, v2, Landroid/util/DisplayMetrics;->density:F
+
+    if-eqz p0, :cond_0
+
+    const/high16 v4, 0x439d0000
+
+    goto :goto_0
+
+    :cond_0
+    const/high16 v4, 0x43700000
+
+    :goto_0
+    mul-float/2addr v3, v4
+
+    float-to-int v3, v3
+
+    iget v4, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
+
+    move-result v3
+
+    iget v4, v1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
+
+    if-eq v4, v3, :cond_1
+
+    iput v3, v1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
+
+    iget-object v0, v0, Landroidx/fragment/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+
+    :cond_1
+    return-void
+.end method
+
+
+# virtual methods
+.method public final calculateMenuSheetHeight()I
+    .registers 4
+
+    iget-object v0, p0, Landroidx/fragment/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+
+    if-eqz v0, :cond_0
+
+    sget v1, Lcom/google/android/material/R$id;->design_bottom_sheet:I
+
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    invoke-static {v0}, Lmozilla/components/support/utils/ext/ViewKt;->getWindowInsets(Landroid/view/View;)Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {v0}, Lmozilla/components/support/utils/ext/WindowInsetsCompatKt;->top(Landroidx/core/view/WindowInsetsCompat;)I
+
+    move-result v0
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_1
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lmozilla/components/support/utils/ext/ContextKt;->isLandscape(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p0
+
+    iget p0, p0, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/16 v2, 0x38
+
+    invoke-static {v2, p0}, Lmozilla/components/support/ktx/android/util/DisplayMetricsKt;->dpToPx(ILandroid/util/DisplayMetrics;)I
+
+    move-result p0
+
+    sub-int p0, v1, p0
+
+    :goto_2
+    sub-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final calculateMenuSheetWidth()I
+    .registers 3
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v1, 0x43700000
+
+    mul-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    return v0
+.end method
+
+.method public final getArgs()Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;
+    .registers 1
+
+    iget-object p0, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->args$delegate:Landroidx/navigation/NavArgsLazy;
+
+    invoke-interface {p0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;
+
+    return-object p0
+.end method
+
+.method public final getBrowserStore()Lmozilla/components/browser/state/store/BrowserStore;
+    .registers 1
+
+    iget-object p0, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->browserStore$delegate:Lkotlin/SynchronizedLazyImpl;
+
+    invoke-virtual {p0}, Lkotlin/SynchronizedLazyImpl;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lmozilla/components/browser/state/store/BrowserStore;
+
+    return-object p0
+.end method
+
+.method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
+    .registers 3
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Landroidx/fragment/app/Fragment;->mCalled:Z
+
+    iget-object p1, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->bottomSheetBehavior:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->calculateMenuSheetWidth()I
+
+    move-result v0
+
+    iput v0, p1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->calculateMenuSheetHeight()I
+
+    move-result p0
+
+    iput p0, p1, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxHeight:I
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
+    .registers 4
+
+    sget-object p1, Lorg/mozilla/fenix/GleanMetrics/Events;->INSTANCE:Lorg/mozilla/fenix/GleanMetrics/Events;
+
+    invoke-virtual {p1}, Lorg/mozilla/fenix/GleanMetrics/Events;->toolbarMenuVisible()Lmozilla/telemetry/glean/private/EventMetricType;
+
+    move-result-object p1
+
+    new-instance v0, Lmozilla/telemetry/glean/private/NoExtras;
+
+    invoke-direct {v0}, Lmozilla/telemetry/glean/private/NoExtras;-><init>()V
+
+    invoke-virtual {p1, v0}, Lmozilla/telemetry/glean/private/EventMetricType;->record(Lmozilla/telemetry/glean/private/EventExtras;)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    iget v0, p0, Landroidx/fragment/app/DialogFragment;->mTheme:I
+
+    new-instance v1, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$onCreateDialog$1;
+
+    invoke-direct {v1, p1, v0}, Lcom/google/android/material/bottomsheet/BottomSheetDialog;-><init>(Landroid/content/Context;I)V
+
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p1, 0x2
+
+    invoke-virtual {v0, p1}, Landroid/view/Window;->clearFlags(I)V
+
+    const/4 p1, 0x0
+
+    invoke-virtual {v0, p1}, Landroid/view/Window;->setDimAmount(F)V
+
+    invoke-virtual {v1}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda3;->animStyle(Landroid/content/Context;)I
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Landroid/view/Window;->setWindowAnimations(I)V
+
+    :cond_0
+    new-instance p1, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda3;
+
+    invoke-direct {p1, p0, v1}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda3;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;Lorg/mozilla/fenix/components/menu/MenuDialogFragment$onCreateDialog$1;)V
+
+    invoke-virtual {v1, p1}, Landroid/app/Dialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
+
+    return-object v1
+.end method
+
+.method public final onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    .registers 5
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p1, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda7;
+
+    invoke-direct {p1, p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda7;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;)V
+
+    new-instance p2, Landroidx/compose/runtime/internal/ComposableLambdaImpl;
+
+    const p3, -0x4a8c5001
+
+    const/4 v0, 0x1
+
+    invoke-direct {p2, p3, v0, p1}, Landroidx/compose/runtime/internal/ComposableLambdaImpl;-><init>(IZLjava/lang/Object;)V
+
+    invoke-static {p0, p2}, Landroidx/fragment/compose/FragmentKt;->content(Landroidx/fragment/app/Fragment;Landroidx/compose/runtime/internal/ComposableLambdaImpl;)Landroidx/compose/ui/platform/ComposeView;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+    .registers 15
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    sput-object v0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->sRef:Ljava/lang/ref/WeakReference;
+
+    iget-object v0, p0, Landroidx/fragment/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+
+    instance-of v1, v0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$onCreateDialog$1;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$onCreateDialog$1;
+
+    new-instance v1, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda3;
+
+    invoke-direct {v1, p0, v0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda3;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;Lorg/mozilla/fenix/components/menu/MenuDialogFragment$onCreateDialog$1;)V
+
+    invoke-virtual {v1, v0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda3;->onShow(Landroid/content/DialogInterface;)V
+
+    sget v2, Lcom/google/android/material/R$id;->design_bottom_sheet:I
+
+    invoke-virtual {v0, v2}, Landroidx/appcompat/app/AppCompatDialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-static {v2}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda3;->playEnter(Landroid/view/View;)V
+
+    :cond_0
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->getArgs()Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;->customTabSessionId:Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    if-eqz p2, :cond_1
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->getBrowserStore()Lmozilla/components/browser/state/store/BrowserStore;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lmozilla/components/lib/state/Store;->getState()Lmozilla/components/lib/state/State;
+
+    move-result-object v1
+
+    check-cast v1, Lmozilla/components/browser/state/state/BrowserState;
+
+    invoke-static {v1, p2}, Lmozilla/components/browser/state/selector/SelectorsKt;->findCustomTab(Lmozilla/components/browser/state/state/BrowserState;Ljava/lang/String;)Lmozilla/components/browser/state/state/CustomTabSessionState;
+
+    move-result-object p2
+
+    goto :goto_0
+
+    :cond_1
+    move-object p2, v0
+
+    :goto_0
+    if-eqz p2, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->getBrowserStore()Lmozilla/components/browser/state/store/BrowserStore;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lmozilla/components/lib/state/Store;->getState()Lmozilla/components/lib/state/State;
+
+    move-result-object p2
+
+    check-cast p2, Lmozilla/components/browser/state/state/BrowserState;
+
+    invoke-static {p2}, Lmozilla/components/browser/state/selector/SelectorsKt;->getSelectedTab(Lmozilla/components/browser/state/state/BrowserState;)Lmozilla/components/browser/state/state/TabSessionState;
+
+    move-result-object p2
+
+    :goto_1
+    const/4 v1, 0x0
+
+    if-eqz p2, :cond_3
+
+    new-instance v2, Lorg/mozilla/fenix/components/menu/store/BrowserMenuState;
+
+    new-instance v3, Lorg/mozilla/fenix/components/menu/store/BookmarkState;
+
+    invoke-direct {v3, v0, v1}, Lorg/mozilla/fenix/components/menu/store/BookmarkState;-><init>(Ljava/lang/String;Z)V
+
+    invoke-direct {v2, p2, v3, v1}, Lorg/mozilla/fenix/components/menu/store/BrowserMenuState;-><init>(Lmozilla/components/browser/state/state/SessionState;Lorg/mozilla/fenix/components/menu/store/BookmarkState;Z)V
+
+    goto :goto_2
+
+    :cond_3
+    move-object v2, v0
+
+    :goto_2
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->getArgs()Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;->accesspoint:Lorg/mozilla/fenix/components/menu/MenuAccessPoint;
+
+    sget-object v4, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$WhenMappings;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v3
+
+    aget v3, v4, v3
+
+    const/4 v4, 0x2
+
+    const/4 v5, 0x3
+
+    if-eq v3, v4, :cond_4
+
+    if-eq v3, v5, :cond_5
+
+    if-eqz p2, :cond_4
+
+    invoke-interface {p2}, Lmozilla/components/browser/state/state/SessionState;->getContent()Lmozilla/components/browser/state/state/ContentState;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_4
+
+    iget-boolean p2, p2, Lmozilla/components/browser/state/state/ContentState;->desktopMode:Z
+
+    goto :goto_3
+
+    :cond_4
+    move p2, v1
+
+    goto :goto_3
+
+    :cond_5
+    if-eqz p2, :cond_4
+
+    invoke-interface {p2}, Lmozilla/components/browser/state/state/SessionState;->getContent()Lmozilla/components/browser/state/state/ContentState;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_4
+
+    iget-boolean p2, p2, Lmozilla/components/browser/state/state/ContentState;->desktopMode:Z
+
+    :goto_3
+    new-instance v3, Lorg/mozilla/fenix/components/menu/store/ExtensionMenuState;
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->getArgs()Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;->accesspoint:Lorg/mozilla/fenix/components/menu/MenuAccessPoint;
+
+    const/16 v6, 0xf
+
+    invoke-direct {v3, v4, v6}, Lorg/mozilla/fenix/components/menu/store/ExtensionMenuState;-><init>(Lorg/mozilla/fenix/components/menu/MenuAccessPoint;I)V
+
+    new-instance v4, Lorg/mozilla/fenix/components/menu/store/MenuState;
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v2, v3, p2, v6}, Lorg/mozilla/fenix/components/menu/store/MenuState;-><init>(Lorg/mozilla/fenix/components/menu/store/BrowserMenuState;Lorg/mozilla/fenix/components/menu/store/ExtensionMenuState;ZI)V
+
+    new-instance p2, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda4;
+
+    invoke-direct {p2, p0, v1}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda4;-><init>(Ljava/lang/Object;B)V
+
+    new-instance v1, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$onViewCreated$$inlined$fragmentStore$1;
+
+    invoke-direct {v1, p0, v4, p2}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$onViewCreated$$inlined$fragmentStore$1;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;Lorg/mozilla/fenix/components/menu/store/MenuState;Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda4;)V
+
+    sget-object p2, Lkotlin/LazyThreadSafetyMode;->NONE:Lkotlin/LazyThreadSafetyMode;
+
+    invoke-static {p2, v1}, Lkotlin/LazyKt__LazyJVMKt;->lazy(Lkotlin/LazyThreadSafetyMode;Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lorg/mozilla/fenix/components/menu/store/MenuStore;
+
+    iput-object p2, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->menuStore:Lorg/mozilla/fenix/components/menu/store/MenuStore;
+
+    new-instance v6, Lorg/mozilla/fenix/components/menu/WebExtensionsMenuBinding;
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->getBrowserStore()Lmozilla/components/browser/state/store/BrowserStore;
+
+    move-result-object v7
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->getArgs()Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;
+
+    move-result-object p2
+
+    iget-object v8, p2, Lorg/mozilla/fenix/components/menu/MenuDialogFragmentArgs;->customTabSessionId:Ljava/lang/String;
+
+    iget-object v9, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->menuStore:Lorg/mozilla/fenix/components/menu/store/MenuStore;
+
+    if-eqz v9, :cond_6
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v1, 0x1
+
+    const/high16 v2, 0x41c00000
+
+    invoke-static {v1, v2, p2}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+
+    move-result p2
+
+    invoke-static {p2}, Lkotlin/math/MathKt;->roundToInt(F)I
+
+    move-result v10
+
+    new-instance v11, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda5;
+
+    invoke-direct {v11, p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda5;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;)V
+
+    invoke-direct/range {v6 .. v11}, Lorg/mozilla/fenix/components/menu/WebExtensionsMenuBinding;-><init>(Lmozilla/components/browser/state/store/BrowserStore;Ljava/lang/String;Lorg/mozilla/fenix/components/menu/store/MenuStore;ILorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda5;)V
+
+    iget-object p2, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->webExtensionsMenuBinding:Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+
+    invoke-virtual {p2, v6, p0, p1}, Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;->set(Lmozilla/components/support/base/feature/LifecycleAwareFeature;Landroidx/lifecycle/LifecycleOwner;Landroid/view/View;)V
+
+    new-instance p2, Lorg/mozilla/fenix/components/menu/IPProtectionMenuBinding;
+
+    invoke-static {p0}, Lorg/mozilla/fenix/ext/FragmentKt;->getRequireComponents(Landroidx/fragment/app/Fragment;)Lorg/mozilla/fenix/components/Components;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/mozilla/fenix/components/Components;->getIpProtection()Lorg/mozilla/fenix/components/ipprotection/IPProtection;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/mozilla/fenix/components/ipprotection/IPProtection;->getStore()Lmozilla/components/feature/ipprotection/store/IPProtectionStore;
+
+    move-result-object v1
+
+    new-instance v2, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda6;
+
+    invoke-direct {v2, p0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$$ExternalSyntheticLambda6;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;)V
+
+    invoke-direct {p2, v1, v2}, Lorg/mozilla/fenix/components/menu/IPProtectionMenuBinding;-><init>(Lmozilla/components/feature/ipprotection/store/IPProtectionStore;Lkotlin/jvm/functions/Function1;)V
+
+    iget-object v1, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->ipProtectionMenuBinding:Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+
+    invoke-virtual {v1, p2, p0, p1}, Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;->set(Lmozilla/components/support/base/feature/LifecycleAwareFeature;Landroidx/lifecycle/LifecycleOwner;Landroid/view/View;)V
+
+    new-instance p2, Lorg/mozilla/fenix/ipprotection/ui/IPProtectionSnackbarBinding;
+
+    invoke-static {p0}, Lorg/mozilla/fenix/ext/FragmentKt;->getRequireComponents(Landroidx/fragment/app/Fragment;)Lorg/mozilla/fenix/components/Components;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/mozilla/fenix/components/Components;->getAppStore()Lorg/mozilla/fenix/components/AppStore;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {p0}, Landroidx/navigation/fragment/FragmentKt;->findNavController(Landroidx/fragment/app/Fragment;)Landroidx/navigation/NavController;
+
+    move-result-object v3
+
+    new-instance v4, Lorg/mozilla/fenix/snackbar/FenixSnackbarDelegate;
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Landroidx/fragment/app/FragmentViewLifecycleOwner;->initialize$1()V
+
+    iget-object v6, v6, Landroidx/fragment/app/FragmentViewLifecycleOwner;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    invoke-static {v6}, Landroidx/lifecycle/LifecycleKt;->getCoroutineScope(Landroidx/lifecycle/Lifecycle;)Landroidx/lifecycle/LifecycleCoroutineScopeImpl;
+
+    move-result-object v6
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->requireContext()Landroid/content/Context;
+
+    move-result-object v7
+
+    iget-object v8, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->snackbarHostState:Landroidx/compose/material3/SnackbarHostState;
+
+    invoke-direct {v4, v8, v6, v7}, Lorg/mozilla/fenix/snackbar/FenixSnackbarDelegate;-><init>(Landroidx/compose/material3/SnackbarHostState;Landroidx/lifecycle/LifecycleCoroutineScopeImpl;Landroid/content/Context;)V
+
+    invoke-direct {p2, v1, v2, v3, v4}, Lorg/mozilla/fenix/ipprotection/ui/IPProtectionSnackbarBinding;-><init>(Lorg/mozilla/fenix/components/AppStore;Landroid/content/Context;Landroidx/navigation/NavController;Lorg/mozilla/fenix/snackbar/FenixSnackbarDelegate;)V
+
+    iget-object v1, p0, Lorg/mozilla/fenix/components/menu/MenuDialogFragment;->ipProtectionSnackbarBinding:Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;
+
+    invoke-virtual {v1, p2, p0, p1}, Lmozilla/components/support/base/feature/ViewBoundFeatureWrapper;->set(Lmozilla/components/support/base/feature/LifecycleAwareFeature;Landroidx/lifecycle/LifecycleOwner;Landroid/view/View;)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getViewLifecycleOwner()Landroidx/fragment/app/FragmentViewLifecycleOwner;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/fragment/app/FragmentViewLifecycleOwner;->initialize$1()V
+
+    iget-object p1, p1, Landroidx/fragment/app/FragmentViewLifecycleOwner;->mLifecycleRegistry:Landroidx/lifecycle/LifecycleRegistry;
+
+    invoke-static {p1}, Landroidx/lifecycle/LifecycleKt;->getCoroutineScope(Landroidx/lifecycle/Lifecycle;)Landroidx/lifecycle/LifecycleCoroutineScopeImpl;
+
+    move-result-object p1
+
+    new-instance p2, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$onViewCreated$4;
+
+    invoke-direct {p2, p0, v0}, Lorg/mozilla/fenix/components/menu/MenuDialogFragment$onViewCreated$4;-><init>(Lorg/mozilla/fenix/components/menu/MenuDialogFragment;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {p1, v0, v0, p2, v5}, Lkotlinx/coroutines/BuildersKt__Builders_commonKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;I)Lkotlinx/coroutines/StandaloneCoroutine;
+
+    return-void
+
+    :cond_6
+    const-string p0, "menuStore"
+
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
+
+    throw v0
+.end method

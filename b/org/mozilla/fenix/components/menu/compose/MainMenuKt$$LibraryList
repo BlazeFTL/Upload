@@ -1,0 +1,183 @@
+.class public final Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function2;
+
+
+# instance fields
+.field public final f$0:Lkotlin/jvm/functions/Function0;
+
+.field public final f$1:Lkotlin/jvm/functions/Function0;
+
+.field public final f$2:Lkotlin/jvm/functions/Function0;
+
+.field public final f$3:Lkotlin/jvm/functions/Function0;
+
+
+# direct methods
+.method public constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
+    .registers 5
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->f$0:Lkotlin/jvm/functions/Function0;
+
+    iput-object p2, p0, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->f$1:Lkotlin/jvm/functions/Function0;
+
+    iput-object p3, p0, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->f$2:Lkotlin/jvm/functions/Function0;
+
+    iput-object p4, p0, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->f$3:Lkotlin/jvm/functions/Function0;
+
+    return-void
+.end method
+
+.method private static item(Landroidx/compose/runtime/Composer;IILkotlin/jvm/functions/Function0;)V
+    .registers 25
+
+    move-object/from16 v17, p0
+
+    move/from16 v1, p1
+
+    move/from16 v2, p2
+
+    move-object/from16 v10, p3
+
+    move-object/from16 v0, v17
+
+    invoke-static {v1, v0}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    invoke-static {v2, v0, v3}, Landroidx/compose/ui/res/PainterResources_androidKt;->painterResource(ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/painter/Painter;
+
+    move-result-object v2
+
+    move-object v0, v1
+
+    move-object v1, v2
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    sget-object v8, Lorg/mozilla/fenix/components/menu/compose/MenuItemState;->ENABLED:Lorg/mozilla/fenix/components/menu/compose/MenuItemState;
+
+    const/4 v9, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const v18, 0x30000040
+
+    const/16 v19, 0x0
+
+    const v20, 0x3f5fc
+
+    invoke-static/range {v0 .. v20}, Lorg/mozilla/fenix/components/menu/compose/MenuItemKt;->MenuItem(Ljava/lang/String;Landroidx/compose/ui/graphics/painter/Painter;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Modifier;ZLjava/lang/String;ILjava/lang/String;Lorg/mozilla/fenix/components/menu/compose/MenuItemState;Lorg/mozilla/fenix/components/menu/compose/MenuItemState;Lkotlin/jvm/functions/Function0;ZLandroidx/compose/ui/graphics/painter/Painter;Ljava/lang/String;Landroidx/compose/ui/semantics/CollectionItemInfo;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;III)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 10
+
+    move-object v0, p1
+
+    check-cast v0, Landroidx/compose/runtime/Composer;
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    and-int/lit8 v2, v1, 0x3
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    if-eq v2, v3, :cond_0
+
+    move v2, v4
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v5
+
+    :goto_0
+    and-int/2addr v1, v4
+
+    invoke-interface {v0, v1, v2}, Landroidx/compose/runtime/Composer;->shouldExecute(IZ)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->f$0:Lkotlin/jvm/functions/Function0;
+
+    sget v2, Lorg/mozilla/fenix/R$string;->library_history:I
+
+    sget v3, Lmozilla/components/ui/icons/R$drawable;->mozac_ic_history_24:I
+
+    invoke-static {v0, v2, v3, v1}, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->item(Landroidx/compose/runtime/Composer;IILkotlin/jvm/functions/Function0;)V
+
+    iget-object v1, p0, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->f$1:Lkotlin/jvm/functions/Function0;
+
+    sget v2, Lorg/mozilla/fenix/R$string;->library_bookmarks:I
+
+    sget v3, Lmozilla/components/ui/icons/R$drawable;->mozac_ic_bookmark_tray_fill_24:I
+
+    invoke-static {v0, v2, v3, v1}, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->item(Landroidx/compose/runtime/Composer;IILkotlin/jvm/functions/Function0;)V
+
+    iget-object v1, p0, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->f$2:Lkotlin/jvm/functions/Function0;
+
+    sget v2, Lorg/mozilla/fenix/R$string;->library_downloads:I
+
+    sget v3, Lmozilla/components/ui/icons/R$drawable;->mozac_ic_download_24:I
+
+    invoke-static {v0, v2, v3, v1}, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->item(Landroidx/compose/runtime/Composer;IILkotlin/jvm/functions/Function0;)V
+
+    iget-object v1, p0, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->f$3:Lkotlin/jvm/functions/Function0;
+
+    sget v2, Lorg/mozilla/fenix/R$string;->browser_menu_passwords:I
+
+    sget v3, Lmozilla/components/ui/icons/R$drawable;->mozac_ic_login_24:I
+
+    invoke-static {v0, v2, v3, v1}, Lorg/mozilla/fenix/components/menu/compose/MainMenuKt$$LibraryList;->item(Landroidx/compose/runtime/Composer;IILkotlin/jvm/functions/Function0;)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-interface {v0}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
+
+    :goto_1
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object v0
+.end method
