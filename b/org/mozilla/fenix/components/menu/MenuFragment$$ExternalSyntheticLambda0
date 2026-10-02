@@ -1,0 +1,342 @@
+.class public final synthetic Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda0;
+.super Landroid/view/ViewOutlineProvider;
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnShowListener;
+.implements Landroid/view/View$OnLayoutChangeListener;
+
+
+# instance fields
+.field public final synthetic f$0:Lorg/mozilla/fenix/components/menu/MenuFragment$onCreateDialog$1;
+
+.field public final synthetic f$1:Lorg/mozilla/fenix/components/menu/MenuFragment;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lorg/mozilla/fenix/components/menu/MenuFragment$onCreateDialog$1;Lorg/mozilla/fenix/components/menu/MenuFragment;)V
+    .registers 3
+
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+
+    iput-object p1, p0, Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda0;->f$0:Lorg/mozilla/fenix/components/menu/MenuFragment$onCreateDialog$1;
+
+    iput-object p2, p0, Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda0;->f$1:Lorg/mozilla/fenix/components/menu/MenuFragment;
+
+    return-void
+.end method
+
+.method private static playEnter(Landroid/view/View;)V
+    .registers 1
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+    .registers 10
+
+    move-object v0, p2
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v3
+
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result v4
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v5
+
+    iget v5, v5, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v6, 0x41400000
+
+    mul-float/2addr v5, v6
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
+
+    return-void
+.end method
+
+.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .registers 14
+
+    invoke-static {p1}, Lmozilla/components/support/utils/ext/ViewKt;->getWindowInsets(Landroid/view/View;)Landroidx/core/view/WindowInsetsCompat;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {v0}, Lmozilla/components/support/utils/ext/WindowInsetsCompatKt;->top(Landroidx/core/view/WindowInsetsCompat;)I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v2, 0x41000000
+
+    mul-float/2addr v1, v2
+
+    float-to-int v1, v1
+
+    add-int/2addr v0, v1
+
+    sub-int v1, p5, p3
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v2
+
+    instance-of v3, v2, Landroid/view/View;
+
+    if-eqz v3, :cond_1
+
+    check-cast v2, Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
+
+    move-result v2
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v2, 0x0
+
+    :goto_1
+    sub-int/2addr v2, v1
+
+    if-gez v2, :cond_2
+
+    const/4 v2, 0x0
+
+    :cond_2
+    sub-int/2addr v0, v2
+
+    int-to-float v0, v0
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
+
+    return-void
+.end method
+
+.method public final onShow(Landroid/content/DialogInterface;)V
+    .registers 9
+
+    sget p1, Lcom/google/android/material/R$id;->design_bottom_sheet:I
+
+    iget-object v6, p0, Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda0;->f$0:Lorg/mozilla/fenix/components/menu/MenuFragment$onCreateDialog$1;
+
+    invoke-virtual {v6, p1}, Landroidx/appcompat/app/AppCompatDialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    invoke-virtual {v6}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
+
+    sget v1, Lmozilla/components/browser/menu/R$style;->Mozac_Browser_Menu_Animation_OverflowMenuTop:I
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setWindowAnimations(I)V
+
+    :cond_0
+    if-eqz v5, :cond_1
+
+    sget v0, Lorg/mozilla/fenix/R$drawable;->bottom_sheet_with_top_rounded_corners:I
+
+    invoke-virtual {v5, v0}, Landroid/view/View;->setBackgroundResource(I)V
+
+    :cond_1
+    if-eqz v5, :cond_2
+
+    invoke-virtual {v5, p0}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+
+    :cond_2
+    if-eqz v5, :cond_3
+
+    invoke-virtual {v5, p0}, Landroid/view/View;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v5, v0}, Landroid/view/View;->setClipToOutline(Z)V
+
+    :cond_3
+    iget-object p0, p0, Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda0;->f$1:Lorg/mozilla/fenix/components/menu/MenuFragment;
+
+    if-eqz v5, :cond_4
+
+    invoke-static {v5}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->from(Landroid/view/View;)Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+
+    move-result-object v4
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuFragment;->calculateMenuSheetWidth$1()I
+
+    move-result v0
+
+    iput v0, v4, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxWidth:I
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    invoke-virtual {v4, v0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setPeekHeight(I)V
+
+    invoke-virtual {p0}, Lorg/mozilla/fenix/components/menu/MenuFragment;->calculateMenuSheetHeight$1()I
+
+    move-result v0
+
+    iput v0, v4, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->maxHeight:I
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, v4, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->skipCollapsed:Z
+
+    const/4 v0, 0x3
+
+    invoke-virtual {v4, v0}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->setState(I)V
+
+    :try_start_0
+    const-class v0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+
+    const-string v1, "draggable"
+
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v4, v1}, Ljava/lang/reflect/Field;->setBoolean(Ljava/lang/Object;Z)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const v0, 0x3f666666
+
+    iput v0, v4, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->hideFriction:F
+
+    goto :goto_0
+
+    :cond_4
+    const/4 v4, 0x0
+
+    :goto_0
+    iput-object v4, p0, Lorg/mozilla/fenix/components/menu/MenuFragment;->bottomSheetBehavior:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+
+    if-eqz v5, :cond_7
+
+    invoke-virtual {v5}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v1, 0x41000000
+
+    mul-float/2addr v1, v0
+
+    float-to-int v1, v1
+
+    invoke-virtual {v5}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v2
+
+    instance-of v3, v2, Landroid/graphics/drawable/GradientDrawable;
+
+    if-eqz v3, :cond_5
+
+    check-cast v2, Landroid/graphics/drawable/GradientDrawable;
+
+    const/high16 v3, 0x41400000
+
+    mul-float/2addr v3, v0
+
+    invoke-virtual {v2, v3}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
+
+    :cond_5
+    const/high16 v2, 0x41000000
+
+    mul-float/2addr v2, v0
+
+    invoke-virtual {v5, v2}, Landroid/view/View;->setElevation(F)V
+
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v2
+
+    instance-of v3, v2, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;
+
+    if-eqz v3, :cond_6
+
+    check-cast v2, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;
+
+    const v3, 0x800035
+
+    iput v3, v2, Landroidx/coordinatorlayout/widget/CoordinatorLayout$LayoutParams;->gravity:I
+
+    invoke-virtual {v2, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
+
+    invoke-virtual {v5, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    :cond_6
+    invoke-static {v5}, Lorg/mozilla/fenix/components/menu/MenuFragment$$ExternalSyntheticLambda0;->playEnter(Landroid/view/View;)V
+
+    :cond_7
+    return-void
+.end method

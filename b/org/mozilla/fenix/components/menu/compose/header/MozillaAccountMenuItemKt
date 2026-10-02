@@ -1,0 +1,925 @@
+.class public final Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nMozillaAccountMenuItem.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MozillaAccountMenuItem.kt\norg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt\n+ 2 Composer.kt\nandroidx/compose/runtime/ComposerKt\n+ 3 Row.kt\nandroidx/compose/foundation/layout/RowKt\n+ 4 Layout.kt\nandroidx/compose/ui/layout/LayoutKt\n+ 5 Composables.kt\nandroidx/compose/runtime/ComposablesKt\n+ 6 Column.kt\nandroidx/compose/foundation/layout/ColumnKt\n+ 7 Dp.kt\nandroidx/compose/ui/unit/DpKt\n*L\n1#1,276:1\n1047#2,6:277\n1047#2,6:283\n1047#2,6:393\n99#3:289\n96#3,9:290\n106#3:324\n81#4,6:299\n88#4,6:314\n96#4:323\n81#4,6:335\n88#4,6:350\n96#4:359\n81#4,6:371\n88#4,6:386\n96#4:401\n402#5,9:305\n411#5,3:320\n402#5,9:341\n411#5,3:356\n402#5,9:377\n411#5:392\n412#5,2:399\n87#6:325\n84#6,9:326\n94#6:360\n87#6:361\n84#6,9:362\n94#6:402\n118#7:403\n118#7:404\n*S KotlinDebug\n*F\n+ 1 MozillaAccountMenuItem.kt\norg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt\n*L\n102#1:277,6\n111#1:283,6\n270#1:393,6\n99#1:289\n99#1:290,9\n99#1:324\n99#1:299,6\n99#1:314,6\n99#1:323\n126#1:335,6\n126#1:350,6\n126#1:359\n266#1:371,6\n266#1:386,6\n266#1:401\n99#1:305,9\n99#1:320,3\n126#1:341,9\n126#1:356,3\n266#1:377,9\n266#1:392\n266#1:399,2\n126#1:325\n126#1:326,9\n126#1:360\n266#1:361\n266#1:362,9\n266#1:402\n55#1:403\n56#1:404\n*E\n"
+.end annotation
+
+
+# direct methods
+.method public static final AvatarIcon(Lmozilla/components/service/fxa/store/Account;Lmozilla/components/service/fxa/manager/AccountState;Landroidx/compose/runtime/Composer;I)V
+    .registers 16
+
+    const v0, -0x44c81080
+
+    invoke-interface {p2, v0}, Landroidx/compose/runtime/Composer;->startRestartGroup(I)Landroidx/compose/runtime/GapComposer;
+
+    move-result-object v8
+
+    invoke-virtual {v8, p0}, Landroidx/compose/runtime/GapComposer;->changedInstance(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    const/4 p2, 0x4
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x2
+
+    :goto_0
+    or-int/2addr p2, p3
+
+    invoke-virtual {v8, p1}, Landroidx/compose/runtime/GapComposer;->changedInstance(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/16 v0, 0x20
+
+    goto :goto_1
+
+    :cond_1
+    const/16 v0, 0x10
+
+    :goto_1
+    or-int/2addr p2, v0
+
+    and-int/lit8 v0, p2, 0x13
+
+    const/16 v1, 0x12
+
+    const/4 v2, 0x1
+
+    const/4 v11, 0x0
+
+    if-eq v0, v1, :cond_2
+
+    move v0, v2
+
+    goto :goto_2
+
+    :cond_2
+    move v0, v11
+
+    :goto_2
+    and-int/2addr p2, v2
+
+    invoke-virtual {v8, p2, v0}, Landroidx/compose/runtime/GapComposer;->shouldExecute(IZ)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_6
+
+    instance-of p2, p1, Lmozilla/components/service/fxa/manager/AccountState$AuthenticationProblem;
+
+    if-eqz p2, :cond_3
+
+    const p2, -0x2db64281
+
+    invoke-virtual {v8, p2}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    invoke-static {v11, v8}, Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt;->WarningAvatarIcon(ILandroidx/compose/runtime/Composer;)V
+
+    invoke-virtual {v8, v11}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_6
+
+    :cond_3
+    const p2, -0x2db57312
+
+    invoke-virtual {v8, p2}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    if-eqz p0, :cond_4
+
+    iget-object p2, p0, Lmozilla/components/service/fxa/store/Account;->avatar:Lmozilla/components/concept/sync/Avatar;
+
+    iget-object p2, p2, Lmozilla/components/concept/sync/Avatar;->url:Ljava/lang/String;
+
+    :goto_3
+    move-object v1, p2
+
+    goto :goto_4
+
+    :cond_4
+    const/4 p2, 0x0
+
+    goto :goto_3
+
+    :goto_4
+    if-eqz v1, :cond_5
+
+    const p2, -0x2db4514b
+
+    invoke-virtual {v8, p2}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget-object p2, Landroidx/compose/ui/Modifier$Companion;->$$INSTANCE:Landroidx/compose/ui/Modifier$Companion;
+
+    sget-object v0, Landroidx/compose/foundation/shape/RoundedCornerShapeKt;->CircleShape:Landroidx/compose/foundation/shape/RoundedCornerShape;
+
+    invoke-static {p2, v0}, Landroidx/compose/ui/draw/ClipKt;->clip(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
+
+    move-result-object p2
+
+    const/high16 v0, 0x41c00000
+
+    invoke-static {p2, v0}, Landroidx/compose/foundation/layout/SizeKt;->size-3ABfNKs(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;
+
+    move-result-object v2
+
+    const v9, 0x6c00c00
+
+    const/16 v10, 0x74
+
+    const/high16 v3, 0x41c00000
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    sget-object v6, Lorg/mozilla/fenix/components/menu/compose/header/ComposableSingletons$MozillaAccountMenuItemKt;->lambda$-470169416:Landroidx/compose/runtime/internal/ComposableLambdaImpl;
+
+    sget-object v7, Lorg/mozilla/fenix/components/menu/compose/header/ComposableSingletons$MozillaAccountMenuItemKt;->lambda$-1354905223:Landroidx/compose/runtime/internal/ComposableLambdaImpl;
+
+    invoke-static/range {v1 .. v10}, Lorg/mozilla/fenix/compose/ImageKt;->Image-_-WMjBM(Ljava/lang/String;Landroidx/compose/ui/Modifier;FLandroidx/compose/ui/Alignment;Landroidx/compose/ui/layout/ContentScale;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+
+    invoke-virtual {v8, v11}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_5
+
+    :cond_5
+    const p2, -0x2dafcaca
+
+    invoke-virtual {v8, p2}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    invoke-static {v11, v8}, Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt;->FallbackAvatarIcon(ILandroidx/compose/runtime/Composer;)V
+
+    invoke-virtual {v8, v11}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    :goto_5
+    invoke-virtual {v8, v11}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_6
+
+    :cond_6
+    invoke-virtual {v8}, Landroidx/compose/runtime/GapComposer;->skipToGroupEnd()V
+
+    :goto_6
+    invoke-virtual {v8}, Landroidx/compose/runtime/GapComposer;->endRestartGroup()Landroidx/compose/runtime/RecomposeScopeImpl;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_7
+
+    new-instance v0, Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p0, p1, p3}, Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt$$ExternalSyntheticLambda0;-><init>(Lmozilla/components/service/fxa/store/Account;Lmozilla/components/service/fxa/manager/AccountState;I)V
+
+    iput-object v0, p2, Landroidx/compose/runtime/RecomposeScopeImpl;->block:Lkotlin/jvm/functions/Function2;
+
+    :cond_7
+    return-void
+.end method
+
+.method public static final FallbackAvatarIcon(ILandroidx/compose/runtime/Composer;)V
+    .registers 11
+
+    const v0, -0x1ac1ce1b
+
+    invoke-interface {p1, v0}, Landroidx/compose/runtime/Composer;->startRestartGroup(I)Landroidx/compose/runtime/GapComposer;
+
+    move-result-object v5
+
+    const/4 p1, 0x0
+
+    const/4 v0, 0x1
+
+    if-eqz p0, :cond_0
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    move v1, p1
+
+    :goto_0
+    and-int/2addr p0, v0
+
+    invoke-virtual {v5, p0, v1}, Landroidx/compose/runtime/GapComposer;->shouldExecute(IZ)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    sget p0, Lmozilla/components/ui/icons/R$drawable;->mozac_ic_avatar_circle_24:I
+
+    invoke-static {p0, v5, p1}, Landroidx/compose/ui/res/PainterResources_androidKt;->painterResource(ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/painter/Painter;
+
+    move-result-object v7
+
+    sget-object p0, Landroidx/compose/material3/ColorSchemeKt;->LocalColorScheme:Landroidx/compose/runtime/StaticProvidableCompositionLocal;
+
+    invoke-virtual {v5, p0}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroidx/compose/material3/ColorScheme;
+
+    iget-wide v3, p0, Landroidx/compose/material3/ColorScheme;->onSurfaceVariant:J
+
+    const/16 v1, 0x38
+
+    const/4 v2, 0x4
+
+    const/4 v6, 0x0
+
+    const/4 v8, 0x0
+
+    invoke-static/range {v1 .. v8}, Landroidx/compose/material3/IconKt;->Icon-ww6aTOc(IIJLandroidx/compose/runtime/Composer;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/painter/Painter;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v5}, Landroidx/compose/runtime/GapComposer;->skipToGroupEnd()V
+
+    :goto_1
+    invoke-virtual {v5}, Landroidx/compose/runtime/GapComposer;->endRestartGroup()Landroidx/compose/runtime/RecomposeScopeImpl;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_2
+
+    new-instance p1, Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt$$ExternalSyntheticLambda1;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Landroidx/compose/runtime/RecomposeScopeImpl;->block:Lkotlin/jvm/functions/Function2;
+
+    :cond_2
+    return-void
+.end method
+
+.method public static final MozillaAccountMenuItem(Lmozilla/components/service/fxa/store/Account;Lmozilla/components/service/fxa/manager/AccountState;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)V
+    .registers 29
+
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, p1
+
+    move-object/from16 v3, p2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const v0, -0x29bace3e
+
+    move-object/from16 v4, p4
+
+    invoke-interface {v4, v0}, Landroidx/compose/runtime/Composer;->startRestartGroup(I)Landroidx/compose/runtime/GapComposer;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroidx/compose/runtime/GapComposer;->changedInstance(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    const/4 v5, 0x2
+
+    if-eqz v4, :cond_0
+
+    const/4 v4, 0x4
+
+    goto :goto_0
+
+    :cond_0
+    move v4, v5
+
+    :goto_0
+    or-int v4, p5, v4
+
+    invoke-virtual {v0, v2}, Landroidx/compose/runtime/GapComposer;->changedInstance(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    const/16 v6, 0x20
+
+    goto :goto_1
+
+    :cond_1
+    const/16 v6, 0x10
+
+    :goto_1
+    or-int/2addr v4, v6
+
+    invoke-virtual {v0, v3}, Landroidx/compose/runtime/GapComposer;->changedInstance(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    const/16 v7, 0x100
+
+    if-eqz v6, :cond_2
+
+    move v6, v7
+
+    goto :goto_2
+
+    :cond_2
+    const/16 v6, 0x80
+
+    :goto_2
+    or-int/2addr v4, v6
+
+    or-int/lit16 v4, v4, 0xc00
+
+    and-int/lit16 v6, v4, 0x493
+
+    const/16 v8, 0x492
+
+    const/4 v9, 0x1
+
+    const/4 v10, 0x0
+
+    if-eq v6, v8, :cond_3
+
+    move v6, v9
+
+    goto :goto_3
+
+    :cond_3
+    move v6, v10
+
+    :goto_3
+    and-int/lit8 v8, v4, 0x1
+
+    invoke-virtual {v0, v8, v6}, Landroidx/compose/runtime/GapComposer;->shouldExecute(IZ)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_18
+
+    sget-object v6, Lmozilla/components/service/fxa/manager/AccountState$NotAuthenticated;->INSTANCE:Lmozilla/components/service/fxa/manager/AccountState$NotAuthenticated;
+
+    invoke-virtual {v2, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    const/4 v8, 0x0
+
+    if-nez v6, :cond_f
+
+    sget-object v6, Lmozilla/components/service/fxa/manager/AccountState$Unknown;->INSTANCE:Lmozilla/components/service/fxa/manager/AccountState$Unknown;
+
+    invoke-virtual {v2, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    goto/16 :goto_a
+
+    :cond_4
+    sget-object v6, Lmozilla/components/service/fxa/manager/AccountState$AuthenticationProblem;->INSTANCE:Lmozilla/components/service/fxa/manager/AccountState$AuthenticationProblem;
+
+    invoke-virtual {v2, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_9
+
+    const v6, -0x21beca1d
+
+    invoke-virtual {v0, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    if-eqz v1, :cond_5
+
+    iget-object v6, v1, Lmozilla/components/service/fxa/store/Account;->displayName:Ljava/lang/String;
+
+    if-nez v6, :cond_7
+
+    :cond_5
+    if-eqz v1, :cond_6
+
+    iget-object v6, v1, Lmozilla/components/service/fxa/store/Account;->email:Ljava/lang/String;
+
+    goto :goto_4
+
+    :cond_6
+    move-object v6, v8
+
+    :cond_7
+    :goto_4
+    if-nez v6, :cond_8
+
+    const v6, 0x59c01821
+
+    invoke-virtual {v0, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v6, Lorg/mozilla/fenix/R$string;->browser_menu_sign_back_in_to_sync:I
+
+    invoke-static {v6, v0}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v6
+
+    :goto_5
+    invoke-virtual {v0, v10}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_6
+
+    :cond_8
+    const v11, 0x59c00e33
+
+    invoke-virtual {v0, v11}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    goto :goto_5
+
+    :goto_6
+    sget v11, Lorg/mozilla/fenix/R$string;->browser_menu_syncing_paused_caption:I
+
+    invoke-static {v11, v0}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v0, v10}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_b
+
+    :cond_9
+    sget-object v6, Lmozilla/components/service/fxa/manager/AccountState$Authenticated;->INSTANCE:Lmozilla/components/service/fxa/manager/AccountState$Authenticated;
+
+    invoke-virtual {v2, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_e
+
+    const v6, -0x21ba170c
+
+    invoke-virtual {v0, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    if-eqz v1, :cond_a
+
+    iget-object v6, v1, Lmozilla/components/service/fxa/store/Account;->displayName:Ljava/lang/String;
+
+    if-nez v6, :cond_c
+
+    :cond_a
+    if-eqz v1, :cond_b
+
+    iget-object v6, v1, Lmozilla/components/service/fxa/store/Account;->email:Ljava/lang/String;
+
+    goto :goto_7
+
+    :cond_b
+    move-object v6, v8
+
+    :cond_c
+    :goto_7
+    if-nez v6, :cond_d
+
+    const v6, 0x59c03a1d
+
+    invoke-virtual {v0, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v6, Lorg/mozilla/fenix/R$string;->browser_menu_account_settings:I
+
+    invoke-static {v6, v0}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v6
+
+    :goto_8
+    invoke-virtual {v0, v10}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_9
+
+    :cond_d
+    const v11, 0x59c03507
+
+    invoke-virtual {v0, v11}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    goto :goto_8
+
+    :goto_9
+    sget v11, Lorg/mozilla/fenix/R$string;->browser_menu_signed_in_caption:I
+
+    invoke-static {v11, v0}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v0, v10}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    goto :goto_b
+
+    :cond_e
+    const v1, 0x59bfea9b
+
+    invoke-static {v0, v1, v10}, Landroidx/compose/material3/internal/TextFieldImplKt$$ExternalSyntheticOutline0;->m(Landroidx/compose/runtime/GapComposer;IZ)Lkotlin/NoWhenBranchMatchedException;
+
+    move-result-object v0
+
+    throw v0
+
+    :cond_f
+    :goto_a
+    const v6, -0x21c1eea9
+
+    invoke-virtual {v0, v6}, Landroidx/compose/runtime/GapComposer;->startReplaceGroup(I)V
+
+    sget v6, Lorg/mozilla/fenix/R$string;->browser_menu_sign_in:I
+
+    invoke-static {v6, v0}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v6
+
+    sget v11, Lorg/mozilla/fenix/R$string;->browser_menu_sign_in_caption_3:I
+
+    invoke-static {v11, v0}, Landroidx/compose/ui/res/StringResources_androidKt;->stringResource(ILandroidx/compose/runtime/Composer;)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v0, v10}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    :goto_b
+    if-eqz v11, :cond_10
+
+    const-string v12, " "
+
+    invoke-static {v6, v12, v11}, Landroidx/compose/foundation/text/modifiers/MinLinesConstrainerKt$$ExternalSyntheticOutline0;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v12
+
+    goto :goto_c
+
+    :cond_10
+    move-object v12, v6
+
+    :goto_c
+    invoke-virtual {v0, v12}, Landroidx/compose/runtime/GapComposer;->changed(Ljava/lang/Object;)Z
+
+    move-result v13
+
+    invoke-virtual {v0}, Landroidx/compose/runtime/GapComposer;->rememberedValue()Ljava/lang/Object;
+
+    move-result-object v14
+
+    sget-object v15, Landroidx/compose/runtime/Composer$Companion;->Empty:Landroidx/compose/runtime/Composer$Companion$Empty$1;
+
+    if-nez v13, :cond_11
+
+    if-ne v14, v15, :cond_12
+
+    :cond_11
+    new-instance v14, Lorg/mozilla/fenix/settings/doh/DohSettingsNavHostKt$$ExternalSyntheticLambda13;
+
+    invoke-direct {v14, v12, v5}, Lorg/mozilla/fenix/settings/doh/DohSettingsNavHostKt$$ExternalSyntheticLambda13;-><init>(Ljava/lang/Object;B)V
+
+    invoke-virtual {v0, v14}, Landroidx/compose/runtime/GapComposer;->updateRememberedValue(Ljava/lang/Object;)V
+
+    :cond_12
+    check-cast v14, Lkotlin/jvm/functions/Function1;
+
+    sget-object v5, Landroidx/compose/ui/Modifier$Companion;->$$INSTANCE:Landroidx/compose/ui/Modifier$Companion;
+
+    invoke-static {v5, v14}, Landroidx/compose/ui/semantics/SemanticsModifierKt;->clearAndSetSemantics(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v12
+
+    const/4 v13, 0x3
+
+    invoke-static {v12, v8, v13}, Landroidx/compose/foundation/layout/SizeKt;->wrapContentSize$default(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/BiasAlignment;I)Landroidx/compose/ui/Modifier;
+
+    move-result-object v12
+
+    sget-object v13, Landroidx/compose/material3/ShapesKt;->LocalShapes:Landroidx/compose/runtime/StaticProvidableCompositionLocal;
+
+    invoke-virtual {v0, v13}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Landroidx/compose/material3/Shapes;
+
+    iget-object v13, v13, Landroidx/compose/material3/Shapes;->extraSmall:Landroidx/compose/foundation/shape/CornerBasedShape;
+
+    invoke-static {v12, v13}, Landroidx/compose/ui/draw/ClipKt;->clip(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v12
+
+    sget-object v13, Landroidx/compose/material3/ColorSchemeKt;->LocalColorScheme:Landroidx/compose/runtime/StaticProvidableCompositionLocal;
+
+    invoke-virtual {v0, v13}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Landroidx/compose/material3/ColorScheme;
+
+    move-object/from16 p3, v11
+
+    iget-wide v10, v14, Landroidx/compose/material3/ColorScheme;->surface:J
+
+    sget-object v14, Landroidx/compose/ui/graphics/RectangleShapeKt;->RectangleShape:Landroidx/compose/ui/graphics/RectangleShapeKt$RectangleShape$1;
+
+    invoke-static {v12, v10, v11, v14}, Landroidx/compose/foundation/BackgroundKt;->background-bw27NRU(Landroidx/compose/ui/Modifier;JLandroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v10
+
+    invoke-static {v10}, Landroidx/compose/foundation/layout/IntrinsicKt;->height(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v10
+
+    const/4 v11, 0x0
+
+    const/high16 v12, 0x42400000
+
+    invoke-static {v10, v11, v12, v9}, Landroidx/compose/foundation/layout/SizeKt;->defaultMinSize-VpY3zN4$default(Landroidx/compose/ui/Modifier;FFI)Landroidx/compose/ui/Modifier;
+
+    move-result-object v16
+
+    and-int/lit16 v4, v4, 0x380
+
+    if-ne v4, v7, :cond_13
+
+    move v10, v9
+
+    goto :goto_d
+
+    :cond_13
+    const/4 v10, 0x0
+
+    :goto_d
+    invoke-virtual {v0}, Landroidx/compose/runtime/GapComposer;->rememberedValue()Ljava/lang/Object;
+
+    move-result-object v4
+
+    if-nez v10, :cond_14
+
+    if-ne v4, v15, :cond_15
+
+    :cond_14
+    new-instance v4, Lorg/mozilla/fenix/settings/doh/DohSettingsNavHostKt$$ExternalSyntheticLambda14;
+
+    invoke-direct {v4, v3, v9}, Lorg/mozilla/fenix/settings/doh/DohSettingsNavHostKt$$ExternalSyntheticLambda14;-><init>(Ljava/lang/Object;B)V
+
+    invoke-virtual {v0, v4}, Landroidx/compose/runtime/GapComposer;->updateRememberedValue(Ljava/lang/Object;)V
+
+    :cond_15
+    move-object/from16 v21, v4
+
+    check-cast v21, Lkotlin/jvm/functions/Function0;
+
+    const/16 v22, 0xf
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    invoke-static/range {v16 .. v22}, Landroidx/compose/foundation/ClickableKt;->clickable-oSLSa3U$default(Landroidx/compose/ui/Modifier;ZLjava/lang/String;Landroidx/compose/ui/semantics/Role;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function0;I)Landroidx/compose/ui/Modifier;
+
+    move-result-object v4
+
+    sget-object v7, Lmozilla/components/compose/base/theme/AcornThemeKt;->localLayout:Landroidx/compose/runtime/StaticProvidableCompositionLocal;
+
+    invoke-virtual {v0, v7}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lmozilla/components/compose/base/theme/layout/AcornLayout;
+
+    iget-object v10, v10, Lmozilla/components/compose/base/theme/layout/AcornLayout;->space:Lmozilla/components/compose/base/theme/layout/AcornSpace;
+
+    invoke-virtual {v10}, Lmozilla/components/compose/base/theme/layout/AcornSpace;->getDynamic200-D9Ej5fM()F
+
+    move-result v10
+
+    invoke-virtual {v0, v7}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lmozilla/components/compose/base/theme/layout/AcornLayout;
+
+    iget-object v7, v7, Lmozilla/components/compose/base/theme/layout/AcornLayout;->space:Lmozilla/components/compose/base/theme/layout/AcornSpace;
+
+    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/high16 v7, 0x41000000
+
+    invoke-static {v4, v10, v7}, Landroidx/compose/foundation/layout/PaddingKt;->padding-VpY3zN4(Landroidx/compose/ui/Modifier;FF)Landroidx/compose/ui/Modifier;
+
+    move-result-object v4
+
+    sget-object v7, Landroidx/compose/ui/Alignment$Companion;->CenterVertically:Landroidx/compose/ui/BiasAlignment$Vertical;
+
+    sget-object v10, Landroidx/compose/foundation/layout/Arrangement;->Start:Landroidx/compose/foundation/layout/Arrangement$Start$1;
+
+    const/16 v11, 0x30
+
+    invoke-static {v10, v7, v0, v11}, Landroidx/compose/foundation/layout/RowKt;->rowMeasurePolicy(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/layout/RowMeasurePolicy;
+
+    move-result-object v7
+
+    iget-wide v10, v0, Landroidx/compose/runtime/GapComposer;->compositeKeyHashCode:J
+
+    invoke-static {v10, v11}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v10
+
+    invoke-virtual {v0}, Landroidx/compose/runtime/GapComposer;->currentCompositionLocalScope()Landroidx/compose/runtime/PersistentCompositionLocalMap;
+
+    move-result-object v11
+
+    invoke-static {v0, v4}, Landroidx/compose/ui/ComposedModifierKt;->materializeModifier(Landroidx/compose/runtime/Composer;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v4
+
+    sget-object v12, Landroidx/compose/ui/node/ComposeUiNode;->Companion:Landroidx/compose/ui/node/ComposeUiNode$Companion;
+
+    invoke-virtual {v12}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v12, v0, Landroidx/compose/runtime/GapComposer;->applier:Landroidx/compose/ui/node/UiApplier;
+
+    if-eqz v12, :cond_17
+
+    invoke-virtual {v0}, Landroidx/compose/runtime/GapComposer;->startReusableNode()V
+
+    iget-boolean v8, v0, Landroidx/compose/runtime/GapComposer;->inserting:Z
+
+    if-eqz v8, :cond_16
+
+    sget-object v8, Landroidx/compose/ui/node/LayoutNode;->Constructor:Lorg/mozilla/fenix/utils/Settings$$ExternalSyntheticLambda55;
+
+    invoke-virtual {v0, v8}, Landroidx/compose/runtime/GapComposer;->createNode(Lkotlin/jvm/functions/Function0;)V
+
+    goto :goto_e
+
+    :cond_16
+    invoke-virtual {v0}, Landroidx/compose/runtime/GapComposer;->useNode()V
+
+    :goto_e
+    sget-object v8, Landroidx/compose/ui/node/ComposeUiNode$Companion;->SetMeasurePolicy:Landroidx/compose/ui/node/ComposeUiNode$Companion$$ExternalSyntheticLambda3;
+
+    invoke-static {v0, v7, v8}, Landroidx/compose/runtime/Updater;->set-impl(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
+
+    sget-object v7, Landroidx/compose/ui/node/ComposeUiNode$Companion;->SetResolvedCompositionLocals:Landroidx/compose/ui/node/ComposeUiNode$Companion$$ExternalSyntheticLambda2;
+
+    invoke-static {v0, v11, v7}, Landroidx/compose/runtime/Updater;->set-impl(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    sget-object v8, Landroidx/compose/ui/node/ComposeUiNode$Companion;->SetCompositeKeyHash:Landroidx/compose/ui/node/ComposeUiNode$Companion$$ExternalSyntheticLambda4;
+
+    invoke-static {v0, v7, v8}, Landroidx/compose/runtime/Updater;->set-impl(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
+
+    invoke-static {v0}, Landroidx/compose/runtime/Updater;->reconcile-impl(Landroidx/compose/runtime/Composer;)V
+
+    sget-object v7, Landroidx/compose/ui/node/ComposeUiNode$Companion;->SetModifier:Landroidx/compose/ui/node/ComposeUiNode$Companion$$ExternalSyntheticLambda1;
+
+    invoke-static {v0, v4, v7}, Landroidx/compose/runtime/Updater;->set-impl(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
+
+    sget-object v4, Landroidx/compose/material3/ContentColorKt;->LocalContentColor:Landroidx/compose/runtime/DynamicProvidableCompositionLocal;
+
+    invoke-virtual {v0, v13}, Landroidx/compose/runtime/GapComposer;->consume(Landroidx/compose/runtime/ProvidableCompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Landroidx/compose/material3/ColorScheme;
+
+    iget-wide v7, v7, Landroidx/compose/material3/ColorScheme;->onSurface:J
+
+    invoke-static {v7, v8, v4}, Landroidx/compose/material3/AlertDialogKt$AlertDialogContent$1$$ExternalSyntheticOutline0;->m(JLandroidx/compose/runtime/DynamicProvidableCompositionLocal;)Landroidx/compose/runtime/ProvidedValue;
+
+    move-result-object v4
+
+    new-instance v7, Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt$$ExternalSyntheticLambda5;
+
+    move-object/from16 v11, p3
+
+    invoke-direct {v7, v1, v2, v6, v11}, Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt$$ExternalSyntheticLambda5;-><init>(Lmozilla/components/service/fxa/store/Account;Lmozilla/components/service/fxa/manager/AccountState;Ljava/lang/String;Ljava/lang/String;)V
+
+    const v6, 0x38bb05e6
+
+    invoke-static {v6, v7, v0}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->rememberComposableLambda(ILkotlin/Function;Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/internal/ComposableLambdaImpl;
+
+    move-result-object v6
+
+    const/16 v7, 0x38
+
+    invoke-static {v4, v6, v0, v7}, Landroidx/compose/runtime/CompositionLocalKt;->CompositionLocalProvider(Landroidx/compose/runtime/ProvidedValue;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
+
+    invoke-virtual {v0, v9}, Landroidx/compose/runtime/GapComposer;->end(Z)V
+
+    move-object v4, v5
+
+    goto :goto_f
+
+    :cond_17
+    invoke-static {}, Landroidx/compose/runtime/ComposablesKt;->invalidApplier()V
+
+    throw v8
+
+    :cond_18
+    invoke-virtual {v0}, Landroidx/compose/runtime/GapComposer;->skipToGroupEnd()V
+
+    move-object/from16 v4, p3
+
+    :goto_f
+    invoke-virtual {v0}, Landroidx/compose/runtime/GapComposer;->endRestartGroup()Landroidx/compose/runtime/RecomposeScopeImpl;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_19
+
+    new-instance v0, Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt$$ExternalSyntheticLambda6;
+
+    move/from16 v5, p5
+
+    invoke-direct/range {v0 .. v5}, Lorg/mozilla/fenix/components/menu/compose/header/MozillaAccountMenuItemKt$$ExternalSyntheticLambda6;-><init>(Lmozilla/components/service/fxa/store/Account;Lmozilla/components/service/fxa/manager/AccountState;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;I)V
+
+    iput-object v0, v6, Landroidx/compose/runtime/RecomposeScopeImpl;->block:Lkotlin/jvm/functions/Function2;
+
+    :cond_19
+    return-void
+.end method
+
+.method public static final WarningAvatarIcon(ILandroidx/compose/runtime/Composer;)V
+    .registers 11
+
+    const v0, -0x9d4ab7d
+
+    invoke-interface {p1, v0}, Landroidx/compose/runtime/Composer;->startRestartGroup(I)Landroidx/compose/runtime/GapComposer;
+
+    move-result-object v5
+
+    const/4 p1, 0x0
+
+    const/4 v0, 0x1
+
+    if-eqz p0, :cond_0
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    move v1, p1
+
+    :goto_0
+    and-int/lit8 v2, p0, 0x1
+
+    invoke-virtual {v5, v2, v1}, Landroidx/compose/runtime/GapComposer;->shouldExecute(IZ)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    sget v1, Lmozilla/components/ui/icons/R$drawable;->mozac_ic_avatar_warning_circle_fill_multicolor_24:I
+
+    invoke-static {v1, v5, p1}, Landroidx/compose/ui/res/PainterResources_androidKt;->painterResource(ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/painter/Painter;
+
+    move-result-object v7
+
+    sget-wide v3, Landroidx/compose/ui/graphics/Color;->Unspecified:J
+
+    const/16 v1, 0xc38
+
+    const/4 v2, 0x4
+
+    const/4 v6, 0x0
+
+    const/4 v8, 0x0
+
+    invoke-static/range {v1 .. v8}, Landroidx/compose/material3/IconKt;->Icon-ww6aTOc(IIJLandroidx/compose/runtime/Composer;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/painter/Painter;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v5}, Landroidx/compose/runtime/GapComposer;->skipToGroupEnd()V
+
+    :goto_1
+    invoke-virtual {v5}, Landroidx/compose/runtime/GapComposer;->endRestartGroup()Landroidx/compose/runtime/RecomposeScopeImpl;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    new-instance v1, Lorg/mozilla/fenix/ipprotection/ui/IPProtectionBottomSheetKt$$ExternalSyntheticLambda9;
+
+    invoke-direct {v1, p0, v0}, Lorg/mozilla/fenix/ipprotection/ui/IPProtectionBottomSheetKt$$ExternalSyntheticLambda9;-><init>(IB)V
+
+    iput-object v1, p1, Landroidx/compose/runtime/RecomposeScopeImpl;->block:Lkotlin/jvm/functions/Function2;
+
+    :cond_2
+    return-void
+.end method
